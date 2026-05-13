@@ -1,0 +1,209 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html{
+    scroll-behavior: smooth;
+  }
+  
+  body{
+     height: 100vh;
+    /* font-family: sans-serif; */
+    position: relative;
+    background-color: #0B080B;
+  }
+  .main-div{
+    width: 100%;
+    height: 100%;
+    background-color: #0B080B;
+  }
+
+  .box1{
+    width: 100%;
+    font-weight: 300;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 3px;
+    padding-top: 30px;
+  }
+  .box2{
+    display:  flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  .image{
+ width: 170px;
+ height: fit-content;
+  }
+  .card{
+    padding: 10px;
+    width: 210px;
+    height: 378px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: #141211;
+    position: relative;
+    border: 2px solid #6D432E;
+  }
+  .imagediv{
+    height: 241px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    object-fit: cover;
+  }
+  .texts{
+ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 8px;
+  }
+ .texts div{
+    display: flex ;
+    font: 300;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+ }
+ .texts div h4{
+ color: gray;
+ font-weight: 100;
+ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+ }
+ .texts h1{
+   
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 300;
+    color: #ED8321;
+    border-top: 1px solid #ED8321;
+ }
+ .card p{
+    font-size: 10px;
+    color: #ED8321;
+    border: 1px solid #6D432E;
+    border-radius: 10px;
+    width: fit-content;
+    padding: 5px;
+
+ }
+ .dot{
+    width: 5px;
+    height: 5px;
+    background-color: #ED8321;
+    border-radius: 100%;
+ }
+ .box3{
+    padding-top: 30px;
+    width: 100%;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+ }
+ .innerbox3{
+    margin-top: 30px;
+    width: 96%;
+    background-color: #0A0A0A;
+    display: flex;
+    border: 2px solid #ED8321;
+    justify-content: sta;
+    align-items: center;
+    flex-direction: row;
+    border-radius:20px;
+    height: 300px;
+ }
+ .innerbox3 img{
+    height: 100%;
+ }
+ .dish_details p{
+  color: #ED8321;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+ }
+ .dish_details{
+  display: flex;
+  justify-content:center;
+  align-items: start;
+  flex-direction: column;
+ }
+ .dish_details h1{
+  color: white;
+ }
+ .dish_details h4{
+  color: #454545;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+ }
+ .dish_details h4 p{
+color:#454545
+ }
+ .button{
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+   padding: 10px;
+   padding-left: 20px;
+   padding-right: 10px;
+   color:#ED8321 ;
+   border-radius: 30px;
+   border:1px solid  #ED8321 ;
+   background-color: transparent;
+   cursor: pointer;
+ }
+ .footer{
+  margin-top: 50px;
+  height: 45px;
+  display: flex;
+  justify-content: space-evenly;
+  color: white;
+  flex-direction: row;
+  width: 100%;
+  border-top: 1px solid #ED8321;
+ }
+ .footernav{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  color: #ED8321;
+  gap: 10px;
+ }
+ .footernav h3{
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+ }
+ .footernav h3 i{
+  font-size: 7px;
+ }
+ .navicons{
+ display: flex;
+ flex-direction: row;
+ justify-content: center;
+ align-items: center;
+ gap: 10px;
+ }
+ .navicons h3{
+  color: #ED8321;
+ 
+
+ }
+ .copyright{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ }
