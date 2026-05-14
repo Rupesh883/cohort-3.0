@@ -1,0 +1,85 @@
+*{
+    padding: 0px;
+    margin: 0;
+    box-sizing:border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+body,html{
+    width: 100%;
+    height: 100%;
+}
+
+.main_container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.box1{
+    width: 60%;
+    height: 100%;
+    background-color: #FCC60C;
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    gap: 50px;
+}
+.leftnav{
+    width: 100%;
+}
+.leftnav img{
+    width:23%;
+    
+}
+.box2{
+    width: 40%;
+    height: 100%;
+    background-color: #FCE9B6;
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+}
+.rightnev{
+    width: 100%;
+    display: flex;justify-content: end;
+    align-items: center;
+}
+.rightnev i{
+    font-size: 40px;
+}
+.rightcontent{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    flex-direction: column;
+}
+.first{
+    color: #FCC60C;
+    font-size: 18px;
+}
+.leftcontent{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  
+    gap: 20px;
+}
+.leftcontent h3{
+    font-size: 20px;
+}
+.leftcontent h2{
+   font-size: 5rem;
+}
+.leftcontent p{
+    font-size: 16px;
+    color: #9B8017
+}
+.pok{
+    width: 40%;
+    position: absolute;
+    top: 50px;
+    left: 45%;
+}
