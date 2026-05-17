@@ -1,0 +1,232 @@
+*{
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight:600;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+}
+body,html {
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    height:100vh;
+}
+.main-container{
+    width: 100%;
+    height: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+    flex-direction: row;
+    background-color: #B9392F;
+}
+
+.box1{
+    background-color: white;
+    width: 100%;
+    height: 100%;
+     
+}
+.box2{
+    background-color: #B9392F;
+    width: 100%;
+
+}
+.nav{
+    margin-top: 30px;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.input{
+    display: flex ;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    height: fit-content;
+    padding: 10px;
+    gap: 5px;
+    border-radius: 20px;
+    background-color: aliceblue;
+}
+.input input{
+    outline: none;
+    border: none;
+    background-color: transparent;
+}
+.texts{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 30px;
+}
+.texts h1{
+    position: absolute;
+    transform: rotate(270deg);
+    top: 250px;
+    left: 0px;
+    font-size: 50px;
+    font-family: "Cormorant Garamond", serif;
+    font-optical-sizing: auto;
+    font-weight:800;
+    font-style:italic;
+}
+ul{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+li::marker {
+    color: #B9392F;
+  }
+  
+li p{
+    font-size: 13px;
+    color: gray;
+  margin: 0;
+}
+li{
+    font-size: 20px;
+    border-bottom: 1px solid gray;
+   display:  flex;
+   flex-direction: column;
+    height: fit-content;
+    width: fit-content;
+    gap: 5px;
+}
+.snav{
+
+    width: 100%;
+    display: flex;
+     flex-direction: row;
+     justify-content: space-evenly;
+     color: white;
+     font-weight: 200 !important;
+  
+
+}
+.snav h3{
+     cursor: pointer;
+}
+.snav h3:hover{
+    color: rgb(232, 232, 232);
+    text-decoration: underline;
+}
+.stext{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    top: 25px;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
+
+}
+.stext h2{
+    color: white;
+    font-size: 35px;
+    font-family: "Cormorant Garamond", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+.image_details{
+    display: flex;
+    flex-direction: row;
+}
+.image_texts{
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.mini_image{
+    width: 100px;
+    height: fit-content;
+    background-color: transparent;
+    object-fit: cover;
+    border-right: 1px solid white;
+    position: relative;
+}
+.mini_image img{
+    width: 100%;
+
+}
+.image_texts div{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    height: fit-content;
+    gap: 10px;
+}
+.image_texts div p{
+    margin: 0;
+    color: wheat;
+    font-weight:300;
+   
+}
+.image_texts div i{
+    font-size: 20px;
+    color: white;
+}
+.sdetails{
+  width:fit-content;
+  display: flex;
+   color: white;
+   flex-direction: column;
+   gap: 25px;
+}
+
+  .btnsell{
+    width: 40px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: gray;
+  }
+  .btn{
+    width: 20px;
+    height: 20px;
+    border-radius:100%;
+   background-color: white;
+  }
+.btn-container{
+    display: flex;
+     gap:10px;
+    flex-direction: column;
+}
+  .sub-btn-container{
+    display: flex;
+    color: white;
+    align-items: center;
+    gap: 10px;
+  }
+  .button{
+    font-size: 20px;
+    padding: 10px 0px;
+    color: #46392D;
+    background-color: #DABC92;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    font-weight: 300;
+  }
+  h3,h2,h1{
+    margin: 0;
+    font-weight: 300;
+  }
+  .mian_image{
+    width: 30%;
+    object-fit: cover;
+    position: absolute;
+    bottom: 15px;
+    left: 35%;
+  }
+  .mian_image img{
+    width:100%;
+  }
