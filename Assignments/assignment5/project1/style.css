@@ -1,0 +1,137 @@
+*{
+    /* margin: 0%;
+    padding: 0%; */
+    box-sizing: border-box;
+    
+}
+*::selection{
+    background-color: rgba(246, 95, 95, 0.615);
+    color: rgba(14, 14, 13, 0.981);
+}
+html{
+  scroll-behavior: smooth;
+}
+/* for all buttons */
+button{
+    transition: all 0.3s ease;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    min-height:100%;
+}
+main{
+    padding: 0px 40px;
+}
+
+
+/* nav css */
+.centernav a{
+    position: relative;
+     transition: all 0.3s ease;
+}
+.centernav a::after{
+    content: "";
+    display: block;
+    width: 0%;
+    height: 1.5px;
+    background-color: #f73e3e;
+    position: absolute;
+    top: 95%;
+    left: 50%;
+    z-index: -1;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+.centernav a:hover::after{
+    width: 100%;
+}
+.centernav a:hover{
+   color: #f73e3ea7;
+}
+
+/* landing page scroll */
+.scroll-logo {
+    overflow: hidden;
+    width: 100%;
+    white-space: nowrap;
+    padding: 20px 0;
+}
+.track div {
+    width: 150px;
+    height: auto;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.track {
+    display: flex;
+    width: max-content;
+    animation: scroll 20s linear infinite;
+    will-change: transform;
+}
+
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* work-card-img */
+.work-card-img img{
+    transition: all 0.3s ease;
+}
+.work-card-img img:hover{
+    transform: scale(1.2);
+}
+.ourvaluescenterbox h1{
+    flex: 0 0 auto;
+}
+.move{
+    transition: all 0.3s ease;
+}
+.move:hover{
+    transform:scale(1.2);
+}
+.popup{
+    overflow: hidden;
+    position: relative;
+}
+.icons{
+    position: absolute;
+    top: 100%;
+    opacity: 0;
+    right: 10%;
+    transition: all 0.6s ease;
+}
+.popup:hover .icons{
+    opacity: 1;
+    top: 80%;
+}
+.page a{
+    position: relative;
+     transition: all 0.3s ease;
+}
+.page a::after{
+    content: "";
+    display: block;
+    width: 0%;
+    height: 1.5px;
+    background-color: #f73e3e;
+    position: absolute;
+    top: 95%;
+    left: 50%; 
+    z-index: -1;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+.page a:hover::after{
+    width: 100%;
+}
+.page a:hover{
+   color: #f73e3ea7;
+}   
