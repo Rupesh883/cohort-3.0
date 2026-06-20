@@ -1,0 +1,79 @@
+/* ── Reset & Base ── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: black;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.gamebox{
+    width: 30%;
+    height: 75%;
+    border: 2px solid white;
+    border-radius: 20px;
+    position: relative;
+}
+.Start-btn{
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: rgba(230, 95, 230, 0.812);
+    border: none;
+    color: white;
+   font-size: larger;
+   cursor: pointer;
+}
+.div{
+    width: 50px;
+    height: 50px;
+    background-color: rebeccapurple;
+    border-radius: 20px;
+    border: none;
+    position: absolute;
+    cursor: pointer;
+}
+.uper-display{
+     width: 30%;
+    height:fit-content;
+    border: 1px solid white;
+    border-radius: 20px;
+   display:flex;
+   justify-content: space-evenly;
+}
+.time ,.score ,h3{
+    color: white;
+    
+}
+
+.scorebord{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    /* background-color: rgba(25, 24, 24, 0.309); */
+    background-color: rgba(0, 0, 0, 0.627);
+    color: white;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    transition: all ease-in 1s;
+    display: none;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}

@@ -44,6 +44,3 @@ function loadTasks(){
   taskcontainer.innerHTML=localStorage.getItem("tasks") || "";
 }
 loadTasks();
-
-
-// <i class="ri-checkbox-circle-fill"></i>

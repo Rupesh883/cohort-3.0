@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+<body>
+    <main>
+        <!-- start menu -->
+            <!-- gameover display -->
+         <div class="gamestartdisplay">
+              <div class="gamestartcard">
+                 <h1 class="gamestart">Start Game</h1>
+                 <div class="playDisplay">
+                       <i class="ri-emotion-happy-line smile1"></i>
+                       <button class="playbtn ">Play </button>
+                 </div>
+              </div>
+         </div>
+        <!-- main bord -->
+         <!-- time score prevscore highscore -->
+
+        <div class="gamebord">
+            <div class="detailbord">
+                <div class="target">
+                    Target: <span class="targetval"></span>
+                </div>
+                <div class="score">
+                    Score: <span class="scoreval">0</span>
+                </div>
+                <div class="time">
+                   Time: <span class="timer">00:00 </span> 
+                </div>
+                <div class="prevscore">
+                    prevScore:5
+                </div>
+                <div class="higestscore">
+                    Higest:0
+                </div>
+            </div>
+
+            <div class="gamenum">
+               
+            </div>
+
+        </div>
+        <!-- gameover display -->
+         <div class="gameoverdisplay">
+              <div class="gameovercard">
+                 <h1 class="gameover">Game Over</h1>
+                 <div class="scoreDisplay">
+                       <i class="ri-emotion-happy-line smile"></i>
+                       <button class="playbtn " id="gameover">Play Aggain</button>
+                       <div class="scor">
+                            <h1>
+                               Score <br>
+                                <span class="gmoverscoreval">20</span>  
+                            </h1>
+                             <h1>
+                                Best <br> <span class="highscore">40</span>
+                             </h1>
+                       </div>
+                 </div>
+              </div>
+         </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

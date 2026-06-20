@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
+  rel="stylesheet"
+/>
+</head>
+<body>
+    <main>
+        <nav>
+            <div class="leftnav">
+                <i class="ri-menu-fold-2-line"></i>
+                Advance Task Manager
+            </div>
+             <div class="rightnav">
+                Dark Mode
+             </div>
+        </nav>
+
+        <section>
+          <div class="sidenav">
+                <ul class="options">
+                    <li>
+                           <i class="ri-menu-fold-2-line"></i> 
+                           All Tasks
+                    </li>
+                      <li>
+                           <i class="ri-calendar-schedule-line"></i>
+                          Today
+                    </li>
+                      <li>
+                           <i class="ri-star-fill"></i>
+                          importent
+                    </li>
+                      <li>
+                           <i class="ri-check-line"></i>
+                          Completed
+                    </li>
+                </ul>
+                <div class="static">
+                    <h4>STATISITICS</h4>
+                    <div class="staticoption">
+                        <h3>Total Tack <span class="totaltask">5</span></h3>
+                        <h3> Completed <span class="completedtask">0</span></h3>
+                        <h3>Panding <span class="pandingtask">5</span></h3>
+                    </div>
+                </div>
+          </div>
+          <div class="mainbody">
+            <div class="top">
+                <div class="topleft">
+                   <h2>All Tasks</h2>
+                       <div class="topleftprorityoption">prority: 
+                            <select class="prority" id="filterwithprioty">
+                              <option value="All" >All</option>
+                              <option value="Low">Low</option>
+                              <option value="Medium">Medium</option>
+                              <option value="High">High</option>
+                            </select>
+                        </div>
+                </div>
+                <div class="topright">
+                    <div class="search">
+                      <i class="ri-search-line"></i>   <input type="text" placeholder="Search tasks" class="livesearchbox">
+                    </div>
+                       
+                        <button type="button" class="addbtn"><i class="ri-add-fill"></i> Add Task</button>
+                </div>
+            </div>
+            <!-- tasks -->
+             <div class="taskcontainer">
+                <div class="taskcard">
+                     <div class="textcontent">
+                        <h2>
+                            <input type="checkbox" name="Completed" id="completed">
+                             Learn Basic Html
+                        </h2>
+                          <p>learn basic fundamental of html</p>
+                        <div class="taskdateandprority">
+                            <i class="ri-calendar-todo-fill"></i> tue may 7,2026
+                            <i class="ri-flashlight-fill"></i> <span class="proritydisplay">MIDUM</span>
+                        </div>
+                     </div>
+                     <div class="btns">
+                        <i class="ri-star-fill"></i> 
+                        <i class="ri-edit-box-line"></i>
+                        <i class="ri-delete-bin-7-fill"></i>
+                     </div>
+                </div>
+             </div>
+          </div>
+        </section>
+
+        <div class="taskform">
+               <form action="#" class="taskaddform">
+                <div class="topandcros">Add Task   <i class="ri-close-line cros-form"></i></div>
+                  <div class="tasks">
+                    <label for="task">Task*</label>
+                    <input value="" type="text" id="task" required>
+                  </div>
+                  <div class="dcscription">
+                    <label for="description">Description</label>
+                    <textarea value="" name="description" maxlength="100" id="textarea"></textarea>
+                  </div>
+                
+                <div class="dateandp">
+                    <div class="date">
+                         <label for="duedate">Due Date</label>
+                         <input type="datetime-local" value="" class="dateinput" name="date" id="" required>
+                    </div>
+                   
+                    <div class="proritycontainer">
+                           <label for="Prioriti">Prioriti</label>
+                            <select name="Prioriti" class="pt" id="Prioriti">
+                                <option value="Low"selected >Low</option>
+                                <option value="Medium">Medium</option>
+                                <option value="High" >High</option>
+                            </select>
+                    </div>
+                 
+                </div>
+                <button class="savetask"> Save Task</button>
+               </form>
+        </div>
+    </main>
+<script src="script.js"></script>
+</body>
+</html>
