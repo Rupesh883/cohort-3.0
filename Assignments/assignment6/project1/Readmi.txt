@@ -1,0 +1,86 @@
+# 🚀 Assignment 6 - Project 1
+
+A simple and clean web project built as part of the **100xDevs Cohort 3.0** assignments. This project focuses on practicing modern frontend development concepts, responsive layouts, and clean UI implementation.
+
+---
+
+## 📖 Overview
+
+This project was created to strengthen core web development skills by building a fully functional and responsive interface.
+
+It demonstrates:
+
+* 🎨 Modern UI Design
+* 📱 Responsive Layout
+* ⚡ Clean and Organized Code Structure
+* 🧩 Reusable Components
+* 🌐 Frontend Development Best Practices
+
+---
+
+## 🛠️ Tech Stack
+
+* **HTML5**
+* **CSS3**
+* **JavaScript (ES6+)**
+
+---
+
+## 📂 Project Structure
+
+```bash
+project1/
+│
+├── index.html
+├── style.css
+├── script.js
+├── font
+└── assets/
+
+```
+
+## ✨ Features
+
+* Responsive design
+* Clean user interface
+* Mobile-friendly layout
+* Easy-to-understand codebase
+* Beginner-friendly project structure
+
+---
+
+## 🎯 Learning Outcomes
+
+While building this project, I practiced:
+
+* HTML semantic structure
+* CSS styling techniques
+* Layout management
+* Responsive design principles
+* JavaScript fundamentals
+* Project organization
+
+---
+
+## 🔥 Future Improvements
+
+* Add animations and transitions
+* Improve accessibility
+* Enhance mobile responsiveness
+* Add more interactive features
+
+---
+
+## 👨‍💻 Author
+
+**Rupesh**
+
+GitHub: https://github.com/Rupesh883
+
+---
+
+## ⭐ Support
+
+If you found this project helpful, consider giving the repository a **star ⭐**.
+
+It helps motivate me to build and share more projects.

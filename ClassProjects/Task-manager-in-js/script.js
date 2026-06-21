@@ -12,6 +12,8 @@ const completedtask=document.querySelector(".completedtask")
 const pandingtask=document.querySelector(".pandingtask")
 const livesearchbox=document.querySelector(".livesearchbox")
 const filterwithprioty=document.querySelector("#filterwithprioty")
+const darkbtn=document.querySelector(".darbtn")
+const darkinnerbtn=document.querySelector(".innerbtn")
 // tasks display function
 let editindex;
 let filtercards=[]
@@ -106,13 +108,14 @@ tasks.forEach((task,index)=>{
     // Append to taskcard
     taskcard.append(textcontent, btns);
 
-    // Add to body (ya kisi aur container me)
+    // Add to body 
     filtercards.push(taskcard)
-    taskcontainer.appendChild(taskcard);
+    taskcontainer.prepend(taskcard);
 
       // delet btn listerner
     del.addEventListener("click",function(){
          tasks.splice(index,1)
+         localStorage.setItem("tasks",JSON.stringify(tasks))
          displayTask()
        })
       //  edit btn listerner
@@ -138,6 +141,8 @@ tasks.forEach((task,index)=>{
                 displayTask()
           }
        });
+      //  darkmode 
+
 
        completedtask.textContent=completedtaskcount
        pandingtask.textContent=tasks.length - completedtaskcount
@@ -206,7 +211,9 @@ livesearchbox.addEventListener("input",function(e){
 filterfun(e)
 })
 
-
-
-
+     darkbtn.addEventListener("click",function(e){
+        darkinnerbtn.classList.toggle("togaldarkbtn")
+    })
 displayTask()
+
+ 

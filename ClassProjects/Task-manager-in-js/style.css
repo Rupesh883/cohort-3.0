@@ -11,6 +11,8 @@ body{
 main{
     width: 100%;
     height: 100%;
+    /* background-color: white;
+    color: black; */
     background-color: #0E0E0E;
     color:white;
     display: flex;
@@ -19,6 +21,7 @@ main{
     flex-direction: column;
   
 }
+
 nav{
     width: 100%;
     padding: 0px 10%;
@@ -77,6 +80,11 @@ section{
     flex-direction: column;
     padding: 20px;
     background-color: #252525;
+    /* background-color: aliceblue; */
+
+}
+.sidenavdark{
+      background-color: aliceblue;
 }
 .options{
     width: 100%;
@@ -85,6 +93,11 @@ section{
     display: flex;
     flex-direction: column;
     
+}
+.options li:nth-child(1){
+     background-color: #2E354B;
+    color: #3A5ECA;
+    border-radius: 10px;
 }
 .options li{
    cursor: pointer;
@@ -169,11 +182,13 @@ align-items: center;
 background-color:#3D3D3D;
 border-radius: 10px;
 }
+
 .search input{
     color: white;
     background-color: transparent;
     border: none;
 }
+
 .search input:focus{
     outline: none;
 }
@@ -204,11 +219,13 @@ border-radius: 10px;
     border-radius: 10px;
     border-left: 4px solid #C9B23C;
     background-color:#2D2D2D;
+      /* background-color:aliceblue; */
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
+
 .textcontent{
     /* height: 100%;
     display: flex;
@@ -229,6 +246,7 @@ border-radius: 10px;
  justify-content: start;
  align-items: center;
  gap: 5px;
+ color: white;
 }
 .textcontent p{
     color:gray;
@@ -392,8 +410,41 @@ input[type="checkbox"]{
     width: 18px;
     border-radius: 50%;
     height: 18px;
-    accent-color: #4caf50; /* checkbox color change */
+    accent-color: #4caf50; 
+    cursor: pointer;
 }
 .hide{
     display: none;
+}
+.darbtn{
+    width: 40px;
+    height: 20px;
+  
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(12px);          
+    -webkit-backdrop-filter: blur(12px); 
+    border: 1px solid rgba(255, 255, 255, 0.4); 
+     border-radius: 12px;
+   color: white;
+   font-size: 16px;
+   cursor: pointer;
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+   transition: all 0.3s ease;
+}
+.innerbtn{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2); 
+    backdrop-filter: blur(12px);         
+    -webkit-backdrop-filter: blur(12px);  
+    border: 1px solid rgba(255, 255, 255, 0.4); 
+   color: white;
+   cursor: pointer;
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+   transition: all 0.3s ease;
+}
+.togaldarkbtn{
+    transform: translateX(100%);
 }
