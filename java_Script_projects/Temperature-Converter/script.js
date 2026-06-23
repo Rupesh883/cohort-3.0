@@ -18,10 +18,5 @@ Fahrenheit.addEventListener('change', (event) => {
 
 Kelvin.addEventListener('change', (event) => {
   Celsius.value= (event.target.value - 273.15).toFixed(2)
-    // let fahrenheit=event.target.value
-     Fahrenheit.value=((Celsius.value * 9 / 5) + 32).toFixed(2)
-    // const celsiusNum = parseFloat( Celsius.value);
-    // Kelvin.value=(celsiusNum +  273.15).toFixed(2)
+  Fahrenheit.value=((Celsius.value * 9 / 5) + 32).toFixed(2)
 });
-// (event.target.value * 9 / 5) + 32;
-// fahrenheit - 32) * 5 / 9
