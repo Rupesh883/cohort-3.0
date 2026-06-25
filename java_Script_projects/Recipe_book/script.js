@@ -3,15 +3,14 @@ const main =document.querySelector(".maincontainer")
 
 async function fetchUserData() {
   try {
-    // 1. Send the request
+    //  Send the request
     const response = await fetch('https://www.themealdb.com/api/json/v1/1/search.php?f=a');
     
-    // 2. Check if the HTTP status code is in the 200–299 range
+
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
-    
-    // 3. Parse the stream response into JSON data
+
     const data = await response.json();
     console.log(data);
     let freg
@@ -42,13 +41,9 @@ async function fetchUserData() {
 
     // main.append(freg)
   } catch (error) {
-    // 4. Catch network or operational failures
     console.error('Fetch error:', error.message);
   }
 }
 
 fetchUserData()
 
-// data.forEach(element => {
-//     console.log(element.ingredent1)
-// });
