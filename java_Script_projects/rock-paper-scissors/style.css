@@ -1,0 +1,213 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+}
+main{
+width: 100%;
+height: 100%;
+background-color: #161E3F;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+padding-top: 10px;
+padding-bottom: 10px;
+gap: 60px;
+overflow-y: auto;
+
+}
+nav{
+    width: 50%;
+    height: 20%;
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+nav h2{
+    color: aliceblue;
+    font-weight: 900;
+}
+.scoreDipsly{
+    display: flex;
+    width: 100px;
+    height: 100%;
+    background-color:white;
+    color: white;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+    border-radius: 10px;
+}
+.scoreDipsly span{
+    color: #2A46C5;
+    font-size: 1rem;
+    font-weight: 900;
+}
+.scorenumber{
+    font-size: 2.5rem;
+    color: grey;
+
+}
+
+.gamebtns{
+    width: 300px;
+    height: 300px;
+    /* background-color: aliceblue; */
+    background-image: url("https://sophrone.github.io/Frontendmentor-rock-paper-scissors/images/bg-triangle.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.rock ,.paper, .scissors{
+    width: 100px;
+    height: 100px;
+    /* border: 10px solid red; */
+    border-radius: 50%;
+    background-color: white;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   cursor: pointer;
+   position: absolute;
+   z-index: 10;
+
+}
+.scissorschoice,.paperchoice,.rockchoice{
+     width: 100px;
+    height: 100px;
+    /* border: 10px solid red; */
+    border-radius: 50%;
+    background-color: white;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   cursor: pointer;
+   z-index: 10;
+   position: relative;
+}
+.comonbtn::before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150px;
+    height: 150px;
+    background: rgba(224, 223, 223, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 0.3s ease;
+    z-index: -1;
+}
+.comonbtn:hover::before{
+    transform: translate(-50%, -50%) scale(1);
+}
+.rock img ,.paper img ,.scissors img{
+    width: 80%;
+    height: 80%;
+    object-fit: cover;
+    object-position: center;
+}
+.scissorschoice img,.paperchoice img,.rockchoice  img{
+    width: 80%;
+    height: 80%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.rock{
+ border: 10px solid red;
+ left: -10%;
+ top: -10%;
+}
+.rockchoice{
+ border: 10px solid red;
+
+}
+
+.paper {
+     border: 10px solid blue;
+      right: -10%;
+      top: -10%;
+}
+.paperchoice{
+     border: 10px solid blue;
+
+}
+.scissors{
+     border: 10px solid green;
+     bottom:0 ;
+     left: 35%;
+}
+.scissorschoice{
+     border: 10px solid green;
+
+}
+.resetbutn{
+    width: 80%;
+    height: fit-content;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding: 0px 50px;
+}
+.resetbutn button{
+    padding:5px 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+
+}
+.resetbutn button:hover{
+    background-color: white;
+    color: #161E3F;
+}
+
+/* game result and choices */
+.gamechoices{
+    height: 100%;
+    width: 60%;
+    /* background-color: whitesmoke; */
+    display: none;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.playaggain{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.playaggain button{
+    padding: 10px 20px ;
+    background-color: white;
+    color: #161E3F;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    font-weight: 900;
+    font-size: 2rem;
+}
+.playaggain span{
+   color: white;
+    font-weight: 900;
+    font-size: 2rem;
+}
