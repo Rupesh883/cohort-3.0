@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>real-timer-expense-tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet"/>
+</head>
+<body>
+    <main>
+        <div class="sidenav">
+            <div class="topcontent">
+                <div class="brandname">
+                      <i class="ri-stack-fill"></i>
+                     <h3>FinTrack Pro 
+                        <span>Enterprise Finance</span>
+                    </h3>
+                </div>
+                <div class="dashsettinfbtn">
+                     <li class="Dashbord"> <i class="ri-dashboard-fill"></i> Dashbord</li>
+                    <li class="Settings"><i class="ri-settings-5-fill"></i> Settings</li>
+                </div>
+            </div>
+            <div class="sbottom">
+                <button class="Addtransactionbtn"> <i class="ri-add-line"></i> Add Transaction</button>
+            </div>
+        </div>
+        <section>
+        <nav> <span class="profilename">profile</span> <button class="logoutbtn"> <i class="ri-logout-box-r-line"></i> Logout</button></nav>
+         <div class="mainsontent">
+            <div class="subnav">
+                  <h1>Financial Overview</h1>
+                  <span class="subtexts">Real-time tracking application</span>
+            </div>
+                <div class="amountcard">
+                    <div class="card curentblancecard">
+                        <i class="ri-bank-fill"></i>
+                        <span>
+                            Current Balance
+                        </span>
+                        <h3>
+                            $<p class="currentbalance">0.00</p>
+                        </h3>
+                    </div>
+                       <div class="card  Total-Income-card">
+                        <i class="ri-line-chart-line"></i>
+                        <span>
+                            Total Income
+                        </span>
+                        <h3>
+                            $<p class="currentbalance">0.00</p>
+                        </h3>
+                    </div>
+                       <div class="card Total-Expense-card ">
+                        <i class="ri-line-chart-line"></i>
+                        <span>
+                            Total Expense
+                        </span>
+                        <h3>
+                            $<p class="currentbalance">0.00</p>
+                        </h3>
+                    </div>
+                      <div class="card Total-Transactions-card">
+                           <i class="ri-hand-coin-line"></i>
+                        <span>
+                           Total Transactions
+                        </span>
+                        <h3>
+                            <p class="currentbalance">0</p>
+                        </h3>
+                    </div>
+                </div>
+                
+                <!-- cahrt -->
+                 <div class="bottomContents">
+                    <div class="chartandsearch">
+                        <div class="chartraper">
+                            <h2>Cash Flow Analysis</h2>
+                            <canvas id="myChart"></canvas>  
+                        </div>
+                        <!-- search function -->
+                         <div class="searchandhistory">
+                            <h2>All Transactions</h2>
+                            <div class="searchnav">
+                                <div class="search"> <i class="ri-search-2-line"></i><input class="searchinput" placeholder="Search transactions..." type="text"></div>
+                                <select class="selecttransactiontype" name="type" id="">
+                                     <option value="all type">All Type</option>
+                                     <option value="all type">Incom only</option>
+                                     <option value="all type">Expense only</option>
+                                    </select>
+                            </div>
+                            <table class="table">
+                                <tbody>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>DESCRIPTION</th>
+                                    <th>CATEGORY</th>
+                                    <th>AMOUNT</th>
+                                    <th>ACTIONS</th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        2026-01-20
+                                    </td>
+                                    <td class="description">
+                                        kuchbhe
+                                    </td><td>
+                                        incom
+                                    </td>
+                                    <td>
+                                        20000
+                                    </td>
+                                    <td class="debtns">
+                                        <i class="ri-edit-line"></i>
+                                        <i class="ri-delete-bin-7-fill"></i>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                         </div>
+
+                    </div>
+                    <div class="darkmode">
+                        <h2>Preferences</h2>
+                        <div class="dark">Dark Mode <div class="buttondark"> <div class="innerbtn"></div> </div></div>
+                        <button class="resetalldata"><i class="ri-delete-bin-7-fill"></i> Delet all Data</button>
+                    </div>
+                 </div>
+                
+           </div>
+              
+        </section>
+         <!-- transition add form -->
+        <div class="transitiondiv">
+                <div class="transitionCrad">
+                     <div class="navtexts">
+                        <h2>Add Transictions</h2> <i class="ri-close-large-line"></i>
+                     </div>
+                     <div class="transictioninputs">
+                        <label for="Type">Type</label>
+                        <select name="Type" id="">
+                             <option value="Expence">Expence</option>
+                             <option selected value="Incom">Incom</option>
+                            </select>
+                            <label for="Description">Description</label>
+                            <input type="text" class="Description" placeholder="e.g. salary coffee ">
+                            <div class="transictionamtdate">
+                                <div class="amountinputs">
+                                   <label for="amount">Amount</label>
+                                   <input type="number" name="" id="">
+                                </div>
+                                <div class="dateinput">
+                                    <label for="amount">Date</label>
+                                   <input type="date" name="" id="">
+                                </div>
+
+                            </div>
+                            <div class="category">
+                                <label for="category">Category</label>
+                                <select name="" id="">
+                                    <option value="food adn drinking ">Food & Drink</option>
+                                    <option value="shoping ">Shoping</option>
+                                    <option value="recharge and bills">Recharge & bills</option>
+                                    <option value="petrol and auto ">Petrol and Auto</option>
+                                    <option value="Utilites ">Utilites</option>
+                                    <option value="salary ">Salary</option>
+                                    <option value=" entertainment">entertainment</option>
+                                    <option value="other ">Other</option>  
+                                </select>
+                            </div>
+                            <button class="saveTransaction">Save Transaction</button>
+                     </div>
+                </div>
+          </div>
+    </main>
+      
+    <!--lofin page -->
+       <div class="logindiv">
+              <div class="logincard">
+                <div class="headingandsub">
+                    <h1>Welcome Back</h1>
+                    <p>Login to FinTrack Pro </p>
+                </div>
+                <div class="inpus">
+                    <label for="username">Username</label>
+                    <input type="text" class="usernmae" name="username">
+                    <label for="password">Password</label>
+                    <input type="text" class="password" name="password" >
+                </div>
+                <div class="loginbtns">
+                    <button class="login">Login</button>
+                    <h4>Don't have an account? <a href="#" class="gotoregister">Register here</a></h4>
+                </div>
+              </div>
+              <!-- register -->
+              <div class="regisetrcard">
+                <div class="headingandsub">
+                    <h1>Create Account</h1>
+                    <p>Join FinTrack Pro</p>
+                </div>
+                <div class="inpus">
+                    <label for="username">Choose a Username</label>
+                    <input type="text" class="usernmaeinter" name="username">
+                    <label for="password">Password</label>
+                    <input type="text" class="passwordinter" name="password" >
+                </div>
+                <div class="registerbtns">
+                    <button class="register">Register</button>
+                    <h4>Already have an account?  <a href="#" class="gotologin">Login here</a></h4>
+                </div>
+              </div>
+         </div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+   <script src="script.js"></script> 
+</body>
+</html>

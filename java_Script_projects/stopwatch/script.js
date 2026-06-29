@@ -5,8 +5,8 @@ const second=document.querySelector(".second")
 const milisecond=document.querySelector(".milisecond")
 const stop=document.querySelector(".stop")
 const reset=document.querySelector(".reset")
-// const start=document.createElement(".start")
-// const start=document.createElement(".start")
+
+
 let hours=0
 let munites=0
 let seconds=0

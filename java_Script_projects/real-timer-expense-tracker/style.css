@@ -1,0 +1,594 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+}
+main{
+width: 100%;
+height: 100%;
+background-color: white;
+/* background: linear-gradient(to left top,rgb(200,100,50),rgb(100,200,50),rgb(50,100,200)); */
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: row;
+display: none;
+position: relative;
+}
+.sidenav{
+    width: 25%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: gray; */
+    flex-direction: column;
+    /* background-color: transparent; */
+    height: 100%;
+    border-right: 1px solid rgb(175, 174, 174);
+}
+section{
+    width: 100%;
+    background-color: white;
+    height: 100%;
+    overflow-y: auto;
+}
+.sbottom{
+    width: 100%;
+    height: 40px;
+    /* background-color: black; */
+    color: white;
+    cursor: pointer;
+    /* display: flex;
+    justify-content: center;
+    align-items:center ;
+    font-size: 2rem; */
+}
+.topcontent{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    gap: 30px;
+}
+.brandname{
+    width: 100%;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: row;
+    gap: 5px;
+}
+.brandname i{
+    font-size: 2rem;
+}
+.brandname h3 {
+    display: flex;
+    justify-content:center;
+    /* align-items: center; */
+    flex-direction: column;
+    gap: 0px;
+    font-size: 1.2rem;
+}
+.brandname h3 span ,.subtexts{
+    margin: 0;
+    padding: 0%;
+    color: rgb(137, 137, 137);
+    font-size: medium;
+    font-weight: 300
+
+}
+.Addtransactionbtn{
+    width: 100%;
+    height: 100%;
+       display: flex;
+    justify-content: center;
+    align-items:center ;
+    font-size: 1rem;
+    background-color: black;
+    border-radius: 10px;
+    color: white;
+    border: none;
+    gap: 3px;
+    cursor: pointer;
+}
+.dashsettinfbtn{
+     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+.Dashbord ,.Settings{
+    text-decoration: none;
+    list-style-type: none;
+    background-color: beige;
+    width: 100%;
+    padding: 15px 10px;
+    font-size: 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    /* background-color: #DBEAFE;
+    color: #1E40B1; */
+}
+.Dashbord , .Settings:hover{
+     background-color: #DBEAFE;
+    color: #1E40B1;
+}
+nav{
+    width: 100%;
+    height: 60px;
+    background-color: white;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding: 0px 30px;
+    gap: 10px;
+    border-bottom: 1px solid rgb(175, 174, 174);
+}
+.logoutbtn{
+    padding: 8px 15px;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+.mainsontent{
+    width: 100%;
+   min-height:100%;
+    padding: 2rem;
+    background-color: #F8F9FB;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    gap: 20px;
+    /* height: calc(100%-60px); */
+    /* background-color: red; */
+    /* background-color: blue; */
+}
+.subnav{
+    width: 100%;
+    /* background-color: aqua; */
+}
+.amountcard{
+    width: 100%;
+    height: 160px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    gap: 10px;
+    /* background-color: aqua; */
+}
+.card{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content:space-between;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: white;
+    border: 1px solid rgb(202, 199, 199);
+
+}
+.curentblancecard i ,.Total-Transactions-card i{
+    font-size: 1.5rem;
+    width: fit-content;
+    background-color: #DBEAFE;
+    color: #1E40AF;
+    padding: 5px;
+    border-radius: 10px;
+}
+.Total-Income-card i{
+     font-size: 1.5rem;
+    width: fit-content;
+    background-color: #DCFCE7;
+    color: #277244;
+    padding: 5px;
+    border-radius: 10px;
+}
+.Total-Expense-card i{
+        font-size: 1.5rem;
+    width: fit-content;
+    background-color: #FEE2E2;
+    color: #A53232;
+    padding: 5px;
+    border-radius: 10px;
+}
+.curentblancecard h3 ,.Total-Income-card h3,.Total-Transactions-card  h3{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: row;
+    font-size: 2rem;
+}
+
+.Total-Expense-card  h3{
+ display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: row;
+    font-size: 2rem;
+    color:#A53232 ;
+}
+.Total-Income-card h3{
+    color: #277244;
+}
+.bottomContents{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    flex-direction: row;
+    /* background-color: #A53232; */
+    gap: 10px;
+}
+.chartandsearch{
+    width: 70%;
+    /* background-color: #277244; */
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.myChart{
+    width: 100%;
+}
+.darkmode{
+    width: 30%;
+    height: 150px;
+    background-color:purple ;
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+    padding: 10px;
+    flex-direction: column;
+    margin-top: 10px;
+    background-color: white;
+    border: 1px solid gray;
+    border-radius: 10px;
+    
+}
+.buttondark{
+    width: 40px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: #1E40AF;
+    display: flex;
+    align-items: center;
+    padding:5px 3px;
+    cursor: pointer;
+}
+.innerbtn{
+    width: 15px;
+    height: 15px;;
+    border-radius: 100%;
+    background-color: white;
+    transition: all 0.5s ease-in-out;
+    /* transform: translateX(120%); */
+}
+.innerbtnTogal{
+transform: translateX(120%);
+
+}
+.chartraper{
+    width: 100%;
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid gray;
+    background-color: white;
+
+}
+.dark{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: 1px solid gray;
+    padding: 10px 0px;
+}
+.resetalldata{
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: 1px #A53232 solid;
+    color: #A53232;
+    background-color: #FEE2E2;
+    cursor: pointer;
+    
+}
+.searchandhistory{
+    border-radius: 10px;
+    border: 1px solid gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 20px;
+    padding: 20px;
+}
+.searchnav{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    /* margin-top: 20px; */
+}
+.search{
+    width: 100%;
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    align-items: center;
+
+}
+.search i{
+    font-size: 1.2rem;
+}
+.searchinput{
+    outline: none;
+    border: none;
+    font-size: 1.2rem;
+    padding: 2px;
+    background-color: white;
+}
+.selecttransactiontype{
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid gary;
+    font-size: 1.1rem;
+    outline: none;
+    /* background-color: #1E40AF; */
+}
+.table{
+    width: 100%;
+    /* background-color: #3a5578; */
+    border-collapse: collapse;
+}
+.table th{
+    color: gray;
+}
+.table th,
+.table td{
+    padding: 12px;
+    text-align: left;
+}
+
+.table tr{
+    width: 100%;
+}
+.debtns{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    /* background-color: #277244; */
+}
+.ri-edit-line{
+    color: #1E40B1;
+}
+.ri-delete-bin-7-fill{
+    color: #A53232;
+}
+.description{
+    color: black;
+}
+
+
+
+/* login page css */
+.logindiv{
+    width: 100%;
+    height: 100%;
+    background-color: #F8F9FB;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+}
+.logincard{
+    padding: 20px;
+    width: 30%;
+    height: 70%;
+    border: 1px solid gray;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+.regisetrcard{
+        padding: 20px;
+    width: 30%;
+    height: 70%;
+    border: 1px solid gray;
+    border-radius: 20px;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+.headingandsub{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.inpus{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    gap: 5px;
+}
+.inpus label{
+    margin-top:10px ;
+    font-weight: 700;
+}
+.inpus input{
+   padding: 8px 10px;
+   border:1px solid gray;
+   border-radius: 10px;
+   font-size: 1.2rem;
+   outline: none;
+   
+}
+.loginbtns,.registerbtns{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+}
+.loginbtns a,.registerbtns a{
+    color: #1E40B1;
+}
+.login{
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #1E40B1;
+    border: none;
+    font-size: 1.3rem;
+    padding: 5px 0px;
+    color: white;
+}
+.register{
+       border-radius: 10px;
+    cursor: pointer;
+    background-color: #28A745;
+    border: none;
+    font-size: 1.3rem;
+    padding: 5px 0px;
+    color: white; 
+    
+}
+/* transition */
+.transitiondiv{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #7c7c7d86;
+    /* backdrop-filter: blur(5px); */
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+}
+.transitionCrad{
+    width: 30%;
+    height: 70%;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid gray;
+    padding: 20px;
+    gap: 20px;
+
+}
+.navtexts{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.navtexts i{
+    font-size: 1.3rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+.transictioninputs{
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    gap: 6px;
+}
+.transictioninputs label{
+    margin-top: 10px;
+}
+.transictioninputs select{
+    width: 100%;
+    outline: none;
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 1rem;
+}
+.Description{
+    width: 100%;
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 1rem;
+    border: 1px solid gray;
+    outline: none;
+}
+.transictionamtdate{
+    width: 100%;
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: center;
+gap: 10px;
+}
+.amountinputs{
+    width: 50%;
+}
+.amountinputs input{
+    width: 100%;
+     font-size: 1rem;
+    padding: 5px;
+    outline: none;
+    border-radius: 10px;
+    border: 1px solid gray;
+
+}
+.dateinput{
+    width: 50%;
+    
+}
+.dateinput input{
+    width: 100%;
+    font-size: 1rem;
+    padding: 5px;
+    outline: none;
+    border-radius: 10px;
+    border: 1px solid gray;
+}
+.category{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+.saveTransaction{
+    width: 100%;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 900;
+    padding: 5px 10px;
+    border: 1px solid white;
+}
