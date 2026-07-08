@@ -9,16 +9,16 @@
 </head>
 <body>
     <main>
-        <div class="sidenav">
+        <div class="sidenav ">
             <div class="topcontent">
                 <div class="brandname">
                       <i class="ri-stack-fill"></i>
-                     <h3>FinTrack Pro 
+                     <h3 id="barndname" class="">FinTrack Pro 
                         <span>Enterprise Finance</span>
                     </h3>
                 </div>
                 <div class="dashsettinfbtn">
-                     <li class="Dashbord"> <i class="ri-dashboard-fill"></i> Dashbord</li>
+                     <li class="Dashbord lightactive "> <i class="ri-dashboard-fill"></i> Dashbord</li>
                     <li class="Settings"><i class="ri-settings-5-fill"></i> Settings</li>
                 </div>
             </div>
@@ -27,10 +27,10 @@
             </div>
         </div>
         <section>
-        <nav> <span class="profilename">profile</span> <button class="logoutbtn"> <i class="ri-logout-box-r-line"></i> Logout</button></nav>
+        <nav class=""> <span class="profilename">profile</span> <button class="logoutbtn"> <i class="ri-logout-box-r-line"></i> Logout</button></nav>
          <div class="mainsontent">
             <div class="subnav">
-                  <h1>Financial Overview</h1>
+                  <h1 id="forh1" class="">Financial Overview</h1>
                   <span class="subtexts">Real-time tracking application</span>
             </div>
                 <div class="amountcard">
@@ -49,7 +49,7 @@
                             Total Income
                         </span>
                         <h3>
-                            $<p class="currentbalance">0.00</p>
+                            $<p class="totalincom">0.00</p>
                         </h3>
                     </div>
                        <div class="card Total-Expense-card ">
@@ -58,7 +58,7 @@
                             Total Expense
                         </span>
                         <h3>
-                            $<p class="currentbalance">0.00</p>
+                            $<p class="Total-Expense">0.00</p>
                         </h3>
                     </div>
                       <div class="card Total-Transactions-card">
@@ -67,7 +67,7 @@
                            Total Transactions
                         </span>
                         <h3>
-                            <p class="currentbalance">0</p>
+                            <p class="TotalTransactions">0</p>
                         </h3>
                     </div>
                 </div>
@@ -83,40 +83,25 @@
                          <div class="searchandhistory">
                             <h2>All Transactions</h2>
                             <div class="searchnav">
-                                <div class="search"> <i class="ri-search-2-line"></i><input class="searchinput" placeholder="Search transactions..." type="text"></div>
+                                <div class="search"> <i class="ri-search-2-line"></i><input required class="searchinput" placeholder="Search transactions..." type="text"></div>
                                 <select class="selecttransactiontype" name="type" id="">
-                                     <option value="all type">All Type</option>
-                                     <option value="all type">Incom only</option>
-                                     <option value="all type">Expense only</option>
+                                     <option value="alltype">All Type</option>
+                                     <option value="Income">Incom only</option>
+                                     <option value="Expence">Expense only</option>
                                     </select>
                             </div>
-                            <table class="table">
-                                <tbody>
-                                <tr>
+                            <table class="table">  
+                                <thead>
+                                     <tr>
                                     <th>Date</th>
                                     <th>DESCRIPTION</th>
                                     <th>CATEGORY</th>
                                     <th>AMOUNT</th>
                                     <th>ACTIONS</th>
                                 </tr>
-                                <tr>
-                                    <td>
-                                        2026-01-20
-                                    </td>
-                                    <td class="description">
-                                        kuchbhe
-                                    </td><td>
-                                        incom
-                                    </td>
-                                    <td>
-                                        20000
-                                    </td>
-                                    <td class="debtns">
-                                        <i class="ri-edit-line"></i>
-                                        <i class="ri-delete-bin-7-fill"></i>
-                                    </td>
-                                </tr>
-                                </tbody>
+                                </thead>
+                               <tbody></tbody>
+                               
                             </table>
                          </div>
 
@@ -124,12 +109,33 @@
                     <div class="darkmode">
                         <h2>Preferences</h2>
                         <div class="dark">Dark Mode <div class="buttondark"> <div class="innerbtn"></div> </div></div>
-                        <button class="resetalldata"><i class="ri-delete-bin-7-fill"></i> Delet all Data</button>
+                        <button class="resetalldata"><i class="ri-delete-bin-7-fill"></i> Delete all Data</button>
                     </div>
                  </div>
                 
-           </div>
-              
+        </div>
+        <!-- settings -->
+         <div class="settingdiv">
+            <h1>Settings</h1>
+            <p>Manage your account profile and app formatting.</p>
+            <div class="Profile-Details-Crad">
+                <h1>Profile Details</h1>
+                <div class="inputs-setings">
+                    <div class="setingusername">
+                        <label for="userName">username</label>
+                        <input required class="usernamesetting" type="text" value="">
+                    </div>
+                     <div class="settingcurrency">
+                    <label for="Currency"> Currency</label>
+                    <input required class="currencyinput" type="text" value="">
+                    </div>
+                </div>
+                  <button class="submitChanges"> save Changes</button>
+
+            </div>
+         </div>
+
+
         </section>
          <!-- transition add form -->
         <div class="transitiondiv">
@@ -139,34 +145,34 @@
                      </div>
                      <div class="transictioninputs">
                         <label for="Type">Type</label>
-                        <select name="Type" id="">
+                        <select name="Type" id="Transaction-type">
                              <option value="Expence">Expence</option>
-                             <option selected value="Incom">Incom</option>
+                             <option selected value="Income">Incom</option>
                             </select>
                             <label for="Description">Description</label>
-                            <input type="text" class="Description" placeholder="e.g. salary coffee ">
+                            <input required type="text" class="Description" placeholder="e.g. salary coffee ">
                             <div class="transictionamtdate">
                                 <div class="amountinputs">
                                    <label for="amount">Amount</label>
-                                   <input type="number" name="" id="">
+                                   <input required type="number" name="" id="amountinput">
                                 </div>
                                 <div class="dateinput">
                                     <label for="amount">Date</label>
-                                   <input type="date" name="" id="">
+                                   <input required type="date" name="" value="" id="transactiondate">
                                 </div>
 
                             </div>
                             <div class="category">
                                 <label for="category">Category</label>
-                                <select name="" id="">
-                                    <option value="food adn drinking ">Food & Drink</option>
+                                <select name="" id="Transactioncategory">
+                                    <option  value="food adn drinking ">Food & Drink</option>
                                     <option value="shoping ">Shoping</option>
                                     <option value="recharge and bills">Recharge & bills</option>
                                     <option value="petrol and auto ">Petrol and Auto</option>
                                     <option value="Utilites ">Utilites</option>
                                     <option value="salary ">Salary</option>
                                     <option value=" entertainment">entertainment</option>
-                                    <option value="other ">Other</option>  
+                                    <option selected value="other ">Other</option>  
                                 </select>
                             </div>
                             <button class="saveTransaction">Save Transaction</button>
@@ -184,9 +190,9 @@
                 </div>
                 <div class="inpus">
                     <label for="username">Username</label>
-                    <input type="text" class="usernmae" name="username">
+                    <input required type="text" class="usernmae" name="username">
                     <label for="password">Password</label>
-                    <input type="text" class="password" name="password" >
+                    <input required type="text" class="password" name="password" >
                 </div>
                 <div class="loginbtns">
                     <button class="login">Login</button>
@@ -201,9 +207,9 @@
                 </div>
                 <div class="inpus">
                     <label for="username">Choose a Username</label>
-                    <input type="text" class="usernmaeinter" name="username">
+                    <input required type="text" class="usernmaeinter" name="username">
                     <label for="password">Password</label>
-                    <input type="text" class="passwordinter" name="password" >
+                    <input required type="text" class="passwordinter" name="password" >
                 </div>
                 <div class="registerbtns">
                     <button class="register">Register</button>
@@ -211,6 +217,7 @@
                 </div>
               </div>
          </div>
+         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
    <script src="script.js"></script> 
 </body>

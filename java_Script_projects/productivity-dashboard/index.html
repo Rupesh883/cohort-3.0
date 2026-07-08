@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productivity-dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+        <link
+  href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
+  rel="stylesheet"
+/>
+</head>
+<body>
+    <main>
+      <!-- fiexd nav -->
+       <nav>
+         <h2>Productivity-dashboard</h2>
+         <div class="icons flex flex-row justify-center items-center gap-2">
+            <i class="ri-github-fill"></i>
+            <div class="darkbtncover">
+               <div class="darkbtn"></div>
+            </div>
+         </div>
+       </nav>
+        <!-- top time for laptop -->
+         <div class="laptoptimenav">
+           <video class="navvideo" src="" autoplay loop muted></video>
+            <div class="morningtexts flex flex-col text-2xl font-bold">
+                 <h1 class="greatingText">Loading.... 👋</h1>
+                 <span  class="text-sm textinfo font-noraml">here's dashbord of today</span>
+            </div>
+            <div class="timedisply flex flex-col items-center">
+                   
+                   <h2 class="laotoptime font-bold text-2xl ">
+                   <span class="displaytime"></span> 🕓
+                   </h2>
+                   <span class=" textinfo date">
+                    <!-- sunday, 5 July 2026 -->
+                   </span>
+            </div>
+         </div>
+         <!-- laptop section -->
+         <section  class="flex flex-row flex-wrap items-center justify-center gap-2">
+          <a href="./compunents/todo/todo.html">
+             <div class="card  bg-gray-300 flex flex-col px-5 gap-2">
+                     <span class="text-4xl mb-2xl">✅</span> 
+                     <div class="flex flex-col ">
+                        <h2 class="font-bold text-2xl">Todo List</h2>
+                       <p class="text-gray-400">track your daly tasks</p>
+                     </div>
+                    
+             </div>
+             </a>
+             <a href="./compunents/dailyplans/dailyplans.html">
+              <div class="card  bg-gray-300 flex flex-col px-5 gap-2">
+                     <span class="text-4xl mb-2xl">🗓️</span> 
+                     <div class="flex flex-col ">
+                        <h2 class="font-bold text-2xl">Daly Planes</h2>
+                       <p class="text-gray-400">Plane Your Day Hour By Hour</p>
+                     </div>
+                    
+             </div>
+            </a>
+            <a href="./compunents/pomodorotimer/pomodorotimer.html">
+              <div class="card  bg-gray-300 flex flex-col px-5 gap-2">
+                     <span class="text-4xl mb-2xl">⏳</span> 
+                     <div class="flex flex-col ">
+                        <h2 class="font-bold text-2xl">Pomodoro Timer</h2>
+                       <p class="text-gray-400">Focus in timed sessions</p>
+                     </div>
+                    
+             </div>
+            </a>
+            <a href="./compunents/motivationquote/motivationquote.html">
+              <div class="card  bg-gray-300 flex flex-col px-5 gap-2">
+                     <span class="text-4xl mb-2xl">💬</span> 
+                     <div class="flex flex-col ">
+                        <h2 class="font-bold text-2xl">Motivation Quote</h2>
+                       <p class="text-gray-400">Get inspired instantly</p>
+                     </div>
+                    
+             </div>
+            </a>
+            <a href="./compunents/weather/weather.html">
+               <div class="card  bg-gray-300 flex flex-col px-5 gap-2">
+                     <span class="text-4xl mb-2xl">☀️</span> 
+                     <div class="flex flex-col ">
+                        <h2 class="font-bold text-2xl">Weather</h2>
+                       <p class="text-gray-400">Check Today's Forecast</p>
+                     </div>
+                    
+             </div>   
+             </a>
+             <a href="./compunents/dailygoals/dailygoals.html">
+             <div class="card  bg-gray-300 flex flex-col px-5 gap-2">
+                     <span class="text-4xl mb-2xl">🎯</span> 
+                     <div class="flex flex-col ">
+                        <h2 class="font-bold text-2xl">Daly Goals</h2>
+                       <p class="text-gray-400">0 of 0 completed</p>
+                     </div>
+                    
+             </div> 
+            </a>
+         </section>
+
+    </main>
+<script src="script.js"></script>
+</body>
+</html>

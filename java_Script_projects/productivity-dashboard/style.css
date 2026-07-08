@@ -1,0 +1,206 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+/* stander padding 80px for laptop */
+main{
+    min-height: 100vh;
+    overflow-x: hidden;
+    background-color: #14141F;
+}
+a{
+    text-decoration: none;
+    outline: none;
+    border: none;
+}
+.laptoptimenav{
+    width: 100%;
+    height: 40%;
+    background-color: beige;
+    clip-path: ellipse(80% 90% at 50% 0%);
+    display: flex;
+    align-items: start;
+    flex-wrap: wrap;
+    /* padding-top: 20px; */
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 40px 80px;
+    position: relative;
+    overflow: hidden;
+      color: rgb(227, 226, 226);
+}
+nav{
+    position: fixed;
+    width: 87%;
+    top: 10px;
+      position: absolute;
+    top: 1%;
+    left: 50%;
+    transform: translate( -50%);
+    height: 30px;
+    z-index: 10;
+    backdrop-filter: blur(20px);
+    /* background-color: aliceblue; */
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+nav h2{
+    color: white;
+    font-weight: bolder;
+}
+.darkbtncover{
+background-color:#1E1E2E;
+border-radius: 20px;
+width: 40px;
+height: 20px;
+display: flex;
+align-items: center;
+justify-content: end;
+/* padding: 1px; */
+cursor: pointer;
+}
+.darkbtn{
+    height: 20px;
+    width: 20px;
+    border-radius: 100%;
+    background-color: white;
+    transition: all ease-in-out 0.5s;
+}
+.active{
+    transform: translateX(-100%);
+}
+.greatingText{
+    backdrop-filter: blur(5px);
+    padding: 5px;
+    border-radius: 20px;
+    /* color: red; */
+}
+.locationdisplayLaptop{
+    display: flex;
+    flex-direction: column;
+    background-color: aliceblue;
+    top: 0;
+}
+.textinfo{
+    color:rgba(10, 3, 3, 0.651);
+     backdrop-filter: blur(10px);
+    padding: 5px;
+    border-radius: 20px;
+}
+.navvideo{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    background-color: transparent;
+
+}
+section{
+    width: 100%;
+    max-height:60%;
+    /* padding-bottom: 20px; */
+    margin-top: 20px;
+    background-color: #14141F;
+    border-bottom: 1px solid gray;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.card{
+    padding: 20px;
+    width: 300px;
+    height: 150px;
+    border-radius: 10px;
+    font-size: larger;
+    background-color: #1E1E2E;
+    color: white;
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+
+}
+.cardlight{
+    background-color: white;
+    color: black;
+    border: 2px dotted #7c6fff;
+}
+.card:hover{
+    transform: translateY(-15%);
+}
+/* .timevideo{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0%;
+} */
+.ri-github-fill{
+    /* width: 50px;
+    height: 50px; */
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.timedisply{
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 5px;
+}
+
+
+@media (width<=600px) {
+    section{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+    a{
+        width: 90%;
+    }
+.card{
+    padding: 10px;
+    width: 100%;
+    height: 150px;
+  
+    font-size: larger;
+   
+
+}
+}
+
+
+@media (width <= 500px) {
+    .laptoptimenav{
+    justify-content: space-between;
+    padding: 40px 20px;
+    justify-content: center;
+    align-items: center;
+}
+     section{
+        max-height: none;
+        height: auto;
+        margin-top: 10px;
+    }
+.textinfo{
+    display: none;
+}
+.darkbtncover{
+
+width: 35px;
+height: 20px;
+}
+.greatingText,.displaytime{
+    font-size: 1rem;
+    /* color: red; */
+}
+nav h2{
+    font-size: 0.7rem;
+}
+}

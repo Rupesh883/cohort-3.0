@@ -1,0 +1,144 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+/* stander padding 80px for laptop */
+main{
+    width: 100vw;
+    height: 100vh;
+    background-color: #14141F;
+    padding: 80px;display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+nav{
+    width: 100%;
+    height: 80px;
+    background-color: transparent;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    border-bottom: 1px solid whitesmoke;
+}
+.backbtn{
+    width: 50px;
+    height: 50px;
+    background-color: #1E1E2E;
+    font-size: 20px;
+    color: white;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+
+}
+.backbtn:hover i{
+    transform: translateX(-20%);
+    color: rgb(234, 95, 95);
+}
+.backbtn i{
+    font-size: 30px;
+    transition: all 0.5s ease;
+}
+section{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    align-items: center;
+    color: white;
+    /* background-color: aquamarine; */
+}
+/* h2{
+    font-weight: bolder;
+    font-size: 3rem;
+    color: black;
+} */
+
+button{
+    padding: 10px 20px ;
+    border: none;
+    /* font-size: 5rem; */
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: large;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.toglebtn{
+    font-size: 4rem;
+}
+.start:disabled{
+    cursor:not-allowed;
+        color: rgb(156, 244, 156);
+    background-color: rgb(1, 71, 1);
+}
+.start{
+    color: rgb(156, 244, 156);
+    background-color: rgb(37, 129, 37);
+}
+.stop{
+    color: rgb(250, 162, 162);
+    background-color: rgb(219, 37, 37);
+}
+.reset{
+    color: rgb(155, 155, 249);
+    background-color: rgb(71, 71, 242);
+}
+.timer{
+    font-size: 5rem;
+    color: rgb(210, 207, 207);
+}
+  .toglebtn{
+        font-size: 2rem;
+    }
+@media (width <=680px) {
+   .cradmotivation{
+    width: 350px;
+    overflow-y: auto;
+}
+} 
+@media (width <= 600px) {
+    .btns{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .toglebtn{
+        font-size: 1rem;
+    }
+    .timer{
+        font-size: 3rem;
+    }
+.start{
+ font-size: 1rem;
+ width: 100%;
+}
+.stop{
+    font-size: 1rem;
+ width: 100%;
+  
+}
+.reset{
+ font-size: 1rem;
+ width: 100%;
+
+
+}
+ main{
+        padding: 20px;
+     }
+
+nav h2{
+    font-size: 1rem;
+}
+.backbtn{
+    width: 30px;
+    height: 30px;
+}
+}

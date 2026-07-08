@@ -1,0 +1,206 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+/* stander padding 80px for laptop */
+main{
+    width: 100vw;
+    height: 100vh;
+    background-color: #14141F;
+    padding-top: 80px;
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-bottom: 10px;
+    /* padding: 80px; */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+nav{
+    width: 100%;
+    height: 80px;
+    background-color: transparent;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    border-bottom: 1px solid whitesmoke;
+}
+.backbtn{
+    width: 50px;
+    height: 50px;
+    background-color: #1E1E2E;
+    font-size: 20px;
+    color: white;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+
+}
+.backbtn:hover i{
+    transform: translateX(-20%);
+    color: rgb(234, 95, 95);
+}
+.backbtn i{
+    font-size: 30px;
+    transition: all 0.5s ease;
+}
+
+
+section{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* main weather banner card */
+.weather-main{
+    background: linear-gradient(90deg, #4facfe, #7c6fff);
+    border-radius: 20px;
+    padding: 28px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+}
+.weather-main .location{
+    font-size: 15px;
+    opacity: 0.9;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.weather-main .icon-big{
+    font-size: 80px;
+    line-height: 1;
+}
+.weather-main .temp-block{
+    text-align: right;
+}
+.weather-main .temp{
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 1;
+}
+.weather-main .condition{
+    font-size: 15px;
+    opacity: 0.9;
+    margin-top: 6px;
+}
+
+/* detail tiles */
+.detail-grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+.detail-tile{
+    background: #1E1E2E;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 22px 16px;
+    text-align: center;
+    color: white;
+}
+.detail-tile i{
+    font-size: 26px;
+    color: #7c6fff;
+    margin-bottom: 10px;
+    display: block;
+}
+.detail-tile .value{
+    font-size: 18px;
+    font-weight: 600;
+}
+.detail-tile .label{
+    font-size: 12px;
+    color: #9a97b3;
+    margin-top: 4px;
+}
+.detailtilelight{
+    background-color: white;
+    color: black;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+/* mobile responsive */
+@media (max-width: 700px){
+    main{
+        padding: 20px;
+        /* padding-bottom: 20px; */
+    }
+    .weather-main{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+    .weather-main .temp-block{
+        text-align: left;
+    }
+    .detail-grid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    nav h2{
+    font-size: 1rem;
+}
+.backbtn{
+    width: 30px;
+    height: 30px;
+}
+
+}
+
+
+
+
+/* 
+@media (width <=680px) {
+   .cradmotivation{
+    width: 350px;
+    overflow-y: auto;
+}
+} 
+@media (width <= 600px) {
+    .btns{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .toglebtn{
+        font-size: 1rem;
+    }
+    .timer{
+        font-size: 3rem;
+    }
+.start{
+ font-size: 1rem;
+ width: 100%;
+}
+.stop{
+    font-size: 1rem;
+ width: 100%;
+  
+}
+.reset{
+ font-size: 1rem;
+ width: 100%;
+
+
+}
+ main{
+        padding: 20px;
+     }
+
+nav h2{
+    font-size: 1rem;
+}
+.backbtn{
+    width: 30px;
+    height: 30px;
+}
+} */

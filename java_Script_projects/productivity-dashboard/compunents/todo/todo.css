@@ -1,0 +1,193 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+/* stander padding 80px for laptop */
+main{
+    width: 100vw;
+    height: 100vh;
+    background-color: #14141F;
+    padding: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+nav{
+    width: 100%;
+    height: 80px;
+    background-color: transparent;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    border-bottom: 1px solid whitesmoke;
+}
+.backbtn{
+    width: 50px;
+    height: 50px;
+    background-color: #1E1E2E;
+    font-size: 20px;
+    color: white;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+
+}
+.backbtn:hover i{
+    transform: translateX(-20%);
+    color: rgb(234, 95, 95);
+}
+.backbtn i{
+    font-size: 30px;
+    transition: all 0.5s ease;
+}
+.addTodoform{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.todoinput{
+    width: 80%;
+    padding: 10px;
+    font-size: 1.5rem;
+      outline: none;
+    border: 1px solid white;
+    border-radius: 10px;
+    background-color: #1E1E2E;
+    color: white;
+}
+.todoinputlight{
+    border: 1px solid rgb(0, 0, 0);
+    background-color: #cacaca;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    color: black;
+
+}
+.addbtn{
+    width: 15%;
+    background-color: #8F75E7;
+    color: white;
+    padding:     10px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    font-size: 1.5rem;
+  
+}
+
+#tasks::-webkit-scrollbar{
+   display: none;
+}
+
+
+#tasks{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    overflow-y: auto;
+
+}
+ li{
+    display: flex;
+    align-items: center;
+    background-color:#1E1E2E;
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+    
+}
+.lightli{
+ background-color:#c3c3c3;
+ color: black;
+}
+#tasks li .close{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    background-color: 1E1E2E;
+    border-radius: 50%;
+    cursor: pointer;
+    right: 2%;
+}
+.close:hover{
+   
+    color: #FF6A1C;
+}
+ul li::before{
+    content: "";
+    display: absolute;
+    width: 25px;
+    height: 25px;
+    /* border:1.5px solid #4CAF50; */
+    border-radius: 50%;
+    background-image:url(./radio-button-unchecked-z4f0oesmyvqpp0kxlrnsr.webp);
+    background-size: cover;
+    margin-right: 10px;
+}
+.single-task{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+.task-btn{
+    display: flex;
+    gap: 10px;
+    padding: 5px;
+}
+.task-btn button{
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: larger;
+}
+.editbtn{
+    background-color: rgba(51, 51, 185, 0.774);
+    color: white;
+}
+.Complete{
+      background-color: #4CAF50;
+    color: white;
+}
+ ul li.checked{
+    color: rgba(66, 65, 65, 0.458);
+    text-decoration: line-through;
+}
+ ul li.checked::before{
+    background-image: url(./green-check-mark-icon-with-circle-tick-box-check-list-circle-frame-checkbox-symbol-sign-png.webp);
+    background-size: cover;
+    background-position: center;
+}
+
+@media (width <= 600px) {
+   .addTodoform{
+    flex-direction: column;
+   }
+   .addbtn{
+    width: 100%;
+   }
+   .todoinput{
+    width: 100%;
+   }
+   main{
+    padding: 40px;
+   }
+}

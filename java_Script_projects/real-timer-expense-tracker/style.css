@@ -31,13 +31,24 @@ position: relative;
     flex-direction: column;
     /* background-color: transparent; */
     height: 100%;
+    transition: all 0.5s ease-in-out;
+
     border-right: 1px solid rgb(175, 174, 174);
+}
+.darkcontainer{
+    background-color:#1F2937;
+    color: white;
+}
+.whitetext{
+    color: white;
 }
 section{
     width: 100%;
     background-color: white;
     height: 100%;
     overflow-y: auto;
+    transition: all 0.5s ease-in-out;
+
 }
 .sbottom{
     width: 100%;
@@ -99,6 +110,8 @@ section{
     border: none;
     gap: 3px;
     cursor: pointer;
+    transition: all 0.5s ease-in-out;
+
 }
 .dashsettinfbtn{
      width: 100%;
@@ -106,22 +119,47 @@ section{
     flex-direction: column;
     align-items: center;
     gap: 8px;
+    transition: all 0.5s ease-in-out;
+
 }
 .Dashbord ,.Settings{
     text-decoration: none;
     list-style-type: none;
-    background-color: beige;
+    /* background-color: beige; */
     width: 100%;
     padding: 15px 10px;
     font-size: 1rem;
+    font-weight: 600;
     border-radius: 10px;
     cursor: pointer;
     /* background-color: #DBEAFE;
     color: #1E40B1; */
 }
-.Dashbord , .Settings:hover{
+.lightSettings:hover{
      background-color: #DBEAFE;
-    color: #1E40B1;
+    color: #427DE4;
+}
+.lightDashbord:hover{
+     background-color: #DBEAFE;
+       /* background-color: #374151; */
+       color: #427DE4;
+}
+.lightactive{
+     background-color: #DBEAFE;
+    /* background-color: #374151; */
+     color: #427DE4;
+}
+.darkactive{
+    background-color: #374151;
+     color: #427DE4;
+}
+.darkactive:hover{
+    background-color: #374151;
+     color: #427DE4;
+}
+.darknotactive:hover{
+    background-color: #374151;
+     color: #427DE4;
 }
 nav{
     width: 100%;
@@ -132,6 +170,8 @@ nav{
     align-items: center;
     padding: 0px 30px;
     gap: 10px;
+    transition: all 0.5s ease-in-out;
+
     border-bottom: 1px solid rgb(175, 174, 174);
 }
 .logoutbtn{
@@ -154,6 +194,9 @@ nav{
     /* height: calc(100%-60px); */
     /* background-color: red; */
     /* background-color: blue; */
+}
+.darkmainsontent {
+    background-color: #111827;
 }
 .subnav{
     width: 100%;
@@ -179,7 +222,12 @@ nav{
     border-radius: 10px;
     background-color: white;
     border: 1px solid rgb(202, 199, 199);
+    transition: all 0.5s ease-in-out;
 
+}
+.darkcard{
+    background-color: #1F2937;
+    color: white;
 }
 .curentblancecard i ,.Total-Transactions-card i{
     font-size: 1.5rem;
@@ -247,14 +295,14 @@ nav{
 .darkmode{
     width: 30%;
     height: 150px;
-    background-color:purple ;
+    /* background-color:purple ; */
     display: flex;
     justify-content: space-between;
     /* align-items: center; */
     padding: 10px;
     flex-direction: column;
     margin-top: 10px;
-    background-color: white;
+    /* background-color: white; */
     border: 1px solid gray;
     border-radius: 10px;
     
@@ -286,7 +334,7 @@ transform: translateX(120%);
     padding: 25px;
     border-radius: 10px;
     border: 1px solid gray;
-    background-color: white;
+    /* background-color: white; */
 
 }
 .dark{
@@ -323,6 +371,7 @@ transform: translateX(120%);
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    gap: 15px;
     /* margin-top: 20px; */
 }
 .search{
@@ -332,7 +381,14 @@ transform: translateX(120%);
     flex-direction: row;
     gap: 5px;
     align-items: center;
+    background-color: white;
+    border: 1px solid gray;
+    border-radius: 10px;
 
+}
+.darksearch{
+    background-color: #1F2937;
+    color: white;
 }
 .search i{
     font-size: 1.2rem;
@@ -340,17 +396,18 @@ transform: translateX(120%);
 .searchinput{
     outline: none;
     border: none;
-    font-size: 1.2rem;
-    padding: 2px;
+    font-size: 1rem;
+    /* padding: 2px; */
     background-color: white;
 }
 .selecttransactiontype{
-    height: 100%;
+    height: 80%;
     width: 100%;
     border-radius: 10px;
     border: 1px solid gary;
     font-size: 1.1rem;
     outline: none;
+    /* background-color: white; */
     /* background-color: #1E40AF; */
 }
 .table{
@@ -380,15 +437,23 @@ transform: translateX(120%);
 }
 .ri-edit-line{
     color: #1E40B1;
+    cursor: pointer;
 }
 .ri-delete-bin-7-fill{
     color: #A53232;
+    cursor: pointer;
+
 }
 .description{
-    color: black;
+    font-weight: 600;
 }
 
-
+select{
+    background-color: white;
+}
+select{
+    background-color: white;
+}
 
 /* login page css */
 .logindiv{
@@ -496,12 +561,16 @@ transform: translateX(120%);
 .transitionCrad{
     width: 30%;
     height: 70%;
-    background-color: white;
+    /* background-color: white; */
     border-radius: 10px;
     border: 1px solid gray;
     padding: 20px;
     gap: 20px;
 
+}
+.darkinputs{
+    background-color: #1F2937;
+    color: white;
 }
 .navtexts{
     width: 100%;
@@ -591,4 +660,75 @@ gap: 10px;
     font-weight: 900;
     padding: 5px 10px;
     border: 1px solid white;
+}
+
+/* setting css */
+.settingdiv{
+    width: 100%;
+    height: 100%;
+    background-color: #F8F9FB;
+    display: none;
+    flex-direction: column;
+    padding: 50px;
+}
+.darksettingdiv{
+    background-color: #111827;
+    color: white;
+}
+.settingdiv p{
+    color: gray;
+    font-weight: 300;
+}
+.Profile-Details-Crad{
+    margin-top: 60px;
+    padding: 30px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    border: 1px solid gray;
+    /* background-color: white; */
+    gap: 20px;
+}
+.dark-Profile-Details-Crad{
+    background-color: #1F2937;
+    color: white;
+}
+.inputs-setings{
+    width: 100%;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: row;
+    gap: 10px;
+}
+.setingusername,.settingcurrency{
+    display:flex;
+    flex-direction: column;
+}
+.setingusername input,.settingcurrency input{
+    padding: 10px;
+    font-size: 1rem;
+    outline: none;
+    border: 1px solid gray;
+    border-radius: 10px;
+}
+.submitChanges{
+    padding: 10px;
+    font-size: 1rem;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+tr{
+    border-bottom: 1px solid gray;
+}
+
+/* darkmode code */
+
+.darkselect{
+    background-color: #111827;
+    color: white;
 }

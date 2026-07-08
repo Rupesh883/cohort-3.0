@@ -1,0 +1,230 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+/* stander padding 80px for laptop */
+main{
+    width: 100vw;
+    height: 100vh;
+    background-color: #14141F;
+    padding-top: 80px;
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-bottom: 10px;
+    /* padding: 80px; */
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    gap: 20px;
+}
+nav{
+    width: 100%;
+    height: 80px;
+    background-color: transparent;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    border-bottom: 1px solid whitesmoke;
+}
+.backbtn{
+    width: 50px;
+    height: 50px;
+    background-color: #1E1E2E;
+    font-size: 20px;
+    color: white;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+
+}
+.backbtn:hover i{
+    transform: translateX(-20%);
+    color: rgb(234, 95, 95);
+}
+.backbtn i{
+    font-size: 30px;
+    transition: all 0.5s ease;
+}
+
+section{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-y: auto;
+}
+
+section::-webkit-scrollbar{
+    display: none;
+}
+/* progress card */
+.progress-card{
+    background: #1E1E2E;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 18px;
+    padding: 20px 24px;
+    color: white;
+}
+.progress-text{
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+.progress-bar-bg{
+    width: 100%;
+    height: 10px;
+    background: #2a2a3d;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.progress-bar-fill{
+    width: 0%;
+    height: 100%;
+    transition: all ease-in 0.5s;
+    background: #7c6fff;
+    border-radius: 5px;
+}
+
+/* goals grid: 2 columns on laptop */
+.goals-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.goal-item{
+    background: #1E1E2E;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 14px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: white;
+    font-size: 15px;
+}
+.goal-item i{
+    font-size: 20px;
+    color: #7c6fff;
+}
+
+/* completed goal style */
+.goal-item.done{
+    opacity: 0.6;
+}
+.goal-item.done span{
+    text-decoration: line-through;
+}
+
+/* add new goal - dashed style */
+.goal-item.add-goal{
+    background: transparent;
+    border: 1px dashed #7c6fff;
+    color: #7c6fff;
+    justify-content: center;
+    cursor: pointer;
+
+}
+.goal-item.add-goal i{
+    color: #7c6fff;
+}
+
+/* mobile responsive */
+@media (max-width: 700px){
+    main{
+        padding: 20px;
+    }
+    .goals-grid{
+        grid-template-columns: 1fr;
+    }
+}
+.goalinputcover{
+    width: 100%;
+    height: 100%;
+    background-color: #adb0ae2c;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+      transition: all 1s ease-in-out;
+
+}
+.goalsinputcard{
+    width: 500px;
+    background-color: #2a2a3d;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    /* position: absolute; */
+    padding: 20px;
+    gap: 20px;
+    /* align-items: center; */
+    /* justify-content: center; */
+}
+.goalsinputcard input{
+    padding: 10px;
+    border-radius: 20px;
+    background-color: #14141F;
+    outline: none;
+    color: white;
+    border: 1px solid white;
+    font-size: 1.3rem;
+}
+.goalsinputcard button{
+    padding: 10px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    background-color: #7c6fff;
+    color: white;
+    border: 1px dotted white;
+    border-radius: 20px;
+}
+.goalsinputcard h3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.5rem;
+    gap: 5px;
+}
+.goalsinputcard h3 i{
+    color: #7c6fff;
+}
+.activeprogress-card{
+    background-color: white;
+    color: black;
+     border:2px solid #7c6fff;
+}
+.goalitemlight{
+    background-color: white;
+    color: black;
+    border:2px solid #2a2a3d;
+
+}
+
+@media (width <= 600px) {
+.goalsinputcard{
+    width: 90%;
+}
+.goalsinputcard h3{
+    font-size: 1rem;
+
+}
+ main{
+        padding: 20px;
+     }
+
+nav h2{
+    font-size: 1rem;
+}
+.backbtn{
+    width: 30px;
+    height: 30px;
+}
+} 
