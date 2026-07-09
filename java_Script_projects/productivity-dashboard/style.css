@@ -29,6 +29,7 @@ a{
     position: relative;
     overflow: hidden;
       color: rgb(227, 226, 226);
+      /* z-index: -1; */
 }
 nav{
     position: fixed;
@@ -53,6 +54,13 @@ nav{
 nav h2{
     color: white;
     font-weight: bolder;
+}
+nav div a{
+    width: fit-content;
+    height: fit-content;
+}
+.icons{
+    width: fit-content;
 }
 .darkbtncover{
 background-color:#1E1E2E;
@@ -107,12 +115,11 @@ cursor: pointer;
 section{
     width: 100%;
     max-height:60%;
-    /* padding-bottom: 20px; */
-    margin-top: 20px;
+    padding-top: 50px;
     background-color: #14141F;
-    border-bottom: 1px solid gray;
     overflow-y: auto;
     overflow-x: hidden;
+
 }
 .card{
     padding: 20px;
@@ -124,6 +131,7 @@ section{
     color: white;
     transition: all 0.5s ease-in-out;
     cursor: pointer;
+    z-index: 50;
 
 }
 .cardlight{

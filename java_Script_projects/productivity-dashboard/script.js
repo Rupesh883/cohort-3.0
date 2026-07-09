@@ -142,3 +142,15 @@ darkbtncover.addEventListener("click",function(){
   mode= localStorage.getItem("mode")
   togalmode()
 })
+
+const dalytotalgols=document.querySelector(".dalytotalgols")
+
+let totalgoals=JSON.parse(localStorage.getItem("goals")) ||[]
+let totalgoal=totalgoals.length
+let completedgoal=0
+totalgoals.forEach((el)=>{
+if(el.done){
+  completedgoal=completedgoal+1
+  dalytotalgols.textContent=`${totalgoal} of ${completedgoal} completed`
+}
+})
