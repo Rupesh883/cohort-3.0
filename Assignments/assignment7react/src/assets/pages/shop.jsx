@@ -1,26 +1,26 @@
 // import Navbar from "../components/Navbar/Navbar";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import Footer from "../components/Footer";
 import Navbar from "../components/Nav";
 import ShopHeader from "../components/ShopingHeader";
 import { MyContext } from "../components/Contextapi";
 import ProductCard from "../components/productCard"
 import SearchFilter from "../components/ShopSearch"
-// import SearchFilter from "../components/shop/SearchFilter";
-// import FilterSidebar from "../components/shop/FilterSidebar";
-// import ProductGrid from "../components/shop/ProductGrid";
-// import Pagination from "../components/shop/Pagination";
+import axios from "axios";
+import LoadingPage from "../components/Loading";
 
 export default function Shop() {
  
 
   const {products,setProducts,filter,setFilter}=useContext(MyContext)
-
-
+    // console.log(products)
+   if(!products){
+    return <LoadingPage />
+   }
   return (
     <div className="min-h-screen bg-[#0D0D0D]">
 
-      <Navbar />
+      {/* <Navbar /> */}
 
       <main className="max-w-7xl mx-auto px-5 pt-32 pb-20">
 

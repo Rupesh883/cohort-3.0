@@ -1,4 +1,6 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
+import { ToastContainer, toast } from 'react-toastify';
+
 import {
   FiHeart,
   FiShoppingCart,
@@ -9,14 +11,15 @@ import { Link } from "react-router";
 import { MyContext } from "./Contextapi";
 import Swal from "sweetalert2";
 
-export default function ProductCard({ product }) {
+export default function ProductCard({ product,minWidth }) {
+ let massage=()=> toast.success("Add To Cart successfully!");
   const {cartItems,setCArtItems}=useContext(MyContext)
 
       const showAlert = (pro) =>{
       return   Swal.fire({
         position: "top-end",
         icon: "success",
-        title: `${pro.title} Added To Cart Scceussfully`,
+        title: `product Added To Cart Scceussfully`,
         showConfirmButton: false,
         timer: 1900
       });}
@@ -27,14 +30,39 @@ export default function ProductCard({ product }) {
   ).toFixed(2);
 
   function AddToCart(pro){ 
-     showAlert(pro)
-    localStorage.setItem("cart",JSON.stringify([...cartItems,pro]))
-    setCArtItems((prev)=>[...prev,pro])
-  
+    let isExist=cartItems.find((elem)=> elem.id === pro.id)
+     if(isExist){
+     const updatedCart = cartItems.map((item) => {
+    if (item.id === pro.id) {
+      return {
+        ...item,
+        qty: item.qty + 1,
+      };
+    }
+    return item;
+    massage()
+  });
 
+        setCArtItems(updatedCart);
+        localStorage.setItem("cart", JSON.stringify(updatedCart));
+      }else{
+
+      let newProduct={
+        ...pro,
+        qty:1,
+        isFavorite:false
+      }
+      // showAlert()
+      massage()
+      localStorage.setItem("cart",JSON.stringify([...cartItems,newProduct]))
+      setCArtItems((prev)=>[...prev,newProduct])
+    
+
+      }
+    
   }
   return (
-    <div className="group overflow-hidden rounded-3xl border border-white/10 bg-[#171717] transition-all duration-300 hover:-translate-y-2 hover:border-lime-400/40">
+    <div className={`group min-w-[${minWidth}] overflow-hidden rounded-3xl border border-white/10 bg-[#171717] transition-all duration-300 hover:-translate-y-2 hover:border-lime-400/40`}>
 
       {/* IMAGE */}
 
@@ -149,9 +177,9 @@ export default function ProductCard({ product }) {
             <FiEye />
           </Link>
 
-          <button className="flex-1 rounded-xl bg-lime-400 py-3 font-semibold text-black transition hover:bg-lime-300">
+          <button onClick={()=>AddToCart(product)} className="flex-1 rounded-xl bg-lime-400 py-3 font-semibold text-black transition hover:bg-lime-300">
 
-            <span onClick={()=>AddToCart(product)} className="flex items-center justify-center gap-2">
+            <span  className="flex items-center justify-center gap-2">
 
               <FiShoppingCart />
 

@@ -38,7 +38,6 @@ export default function Register() {
       } = useForm()
       
  function Submit(data){
-            // console.log(data)
             let userFound= allUserData.find((user)=>user.email == data.email || user.number == data.number ) 
              if(userFound){
                navigate("/login")
@@ -51,7 +50,6 @@ export default function Register() {
                 password:data.password,
             }
             setLoginData([obj])
-            console.log(...allUserData,obj);
             
             setAllUserData((prev)=> [...prev, obj])
             localStorage.setItem("CurrentUser",JSON.stringify(obj))
@@ -71,7 +69,6 @@ export default function Register() {
     const hasNumber = /\d/.test(password);
     const hasSymbol = /[!@#$%^&*]/.test(password);
     const hasLength = password.length >= 8;
-    // console.log(hasSame)
     
     // its gives an total truthy in numbers
     const score = [

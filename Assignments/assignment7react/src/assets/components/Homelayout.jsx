@@ -15,8 +15,7 @@ const HomeLayout = () => {
 
   return (
     <>
-    <Navbar/>
-    
+    {/* <Navbar/> */}
      <Hero/>
      <Categories/>
      {/* <TopProducts/> */}

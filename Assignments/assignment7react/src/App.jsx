@@ -13,6 +13,7 @@ import Shop from './assets/pages/shop'
 import SingleProduct from './assets/pages/SingleProduct'
 import ProtectedRoute from "../src/assets/Auth/ProtectedRoute"
 import CartDrawer from './assets/components/Cart'
+import CheckOut from './assets/pages/CheckOut'
 
 function App() {
 
@@ -29,6 +30,8 @@ function App() {
       </Route>
       {/* <Route path='/' element={<Navbar/>}/> */}
         <Route path='/' element={<ProtectedRoute><HomeLayout/></ProtectedRoute>}></Route>
+        <Route path='/checkout' element={<ProtectedRoute><CheckOut/></ProtectedRoute>}></Route>
+
          <Route path='/shop' element={<ProtectedRoute><Shop/></ProtectedRoute>}> </Route>
          <Route path='/product/:id' element={<ProtectedRoute><SingleProduct/></ProtectedRoute>}/>
    </Routes>

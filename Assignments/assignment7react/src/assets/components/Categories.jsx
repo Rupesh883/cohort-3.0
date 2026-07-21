@@ -13,17 +13,18 @@ import { Link } from "react-router";
 import { MyContext } from "./Contextapi";
 
 export default function Categories() {
-  const{products,setProducts}=useContext(MyContext)
+  const{products,setProducts,categoryFilter,setCategoryFilter}=useContext(MyContext)
       const[categories,setCategories]=useState([])
      async function FetchCategory(){
         let data= await  axios.get("https://dummyjson.com/products/categories")
          setCategories(data.data)
-         console.log("console.log kar raha hu main yaha sa",data.data)
+        
       }
-     async  function callCategory(url){
+     async  function callCategory(url,slug){
              let data= await  axios.get(`${url}`)
+             console.log(data.data.products)
               setProducts(data.data.products)
-              console.log("console.log kar raha hu main yaha sa",data.data)
+              setCategoryFilter([slug])
        }
       
       useEffect(()=>{
@@ -93,13 +94,13 @@ export default function Categories() {
 
           </div>
 
-          <button className="hidden md:flex items-center gap-2 text-lime-400 hover:gap-4 transition-all">
+          <Link to={'/shop'} className="hidden md:flex items-center gap-2 text-lime-400 hover:gap-4 transition-all">
 
             View All
 
             <FiArrowUpRight />
 
-          </button>
+          </Link>
 
         </div>
 
@@ -108,7 +109,7 @@ export default function Categories() {
         <div className="flex flex-row flex-wrap  lg:grid-cols-6 gap-4">
 
           {categories?.map((item, index) => {
-            console.log(item)
+            // console.log(item)
       return  ( 
       <div
                 key={index}
@@ -119,7 +120,7 @@ export default function Categories() {
                 />          
              
               </Link> */}
-              <Link to={'/shop'} onClick={()=>callCategory(item.url)} className={`  transition-all flex justify-center items-center duration-500 bg-gradient-to-br `}>
+              <Link to={'/shop'} onClick={()=>callCategory(item.url,item.slug)} className={`  transition-all flex justify-center items-center duration-500 bg-gradient-to-br `}>
              
                  <h4 className="relative text-shadow-white text-white  text-nowrap text-xl font-bold">
                   {item.name}
@@ -127,8 +128,6 @@ export default function Categories() {
             </Link>
            </div>
               )
-            
-
 })}
 
         </div>

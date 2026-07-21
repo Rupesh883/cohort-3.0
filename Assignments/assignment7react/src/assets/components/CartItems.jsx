@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext,useState } from "react";
 import {
   FiHeart,
   FiTrash2,
@@ -10,17 +10,56 @@ import { MyContext } from "./Contextapi";
 
 export default function CartItem({pro}) {
         const {cartItems,setCArtItems}=useContext(MyContext)
-    const discountedPrice = (
-    pro.price -
-    (pro.price * pro.discountPercentage) / 100
-  ).toFixed(2);
+        const[count,setCount]=useState(1)
 
-  function DeleteCart(id){
-     let FilteredValue=cartItems.filter((elem)=> elem.id != id)
-    setCArtItems(FilteredValue)
-    localStorage.setItem("cart",JSON.stringify(FilteredValue))
+    const discountedPrice = (
+        pro.price -
+        (pro.price * pro.discountPercentage) / 100
+      ).toFixed(2);
+
+   function DeleteCart(id){
+        let FilteredValue=cartItems.filter((elem)=> elem.id != id)
+        
+        setCArtItems(FilteredValue)
+        localStorage.setItem("cart",JSON.stringify(FilteredValue))
     
   }
+ 
+function increase(id) {
+  const updatedCart = cartItems.map((item) => {
+    if (item.id === id) {
+      return {
+        ...item,
+        qty: item.qty + 1,
+      };
+    }
+    return item;
+  });
+
+  setCArtItems(updatedCart);
+  localStorage.setItem("cart", JSON.stringify(updatedCart));
+}
+function decrease(id) {
+  const product = cartItems.find((item) => item.id === id);
+
+  if (product.qty === 1) {
+    DeleteCart(id);
+    return;
+  }
+
+  const updatedCart = cartItems.map((item) => {
+    if (item.id === id) {
+      return {
+        ...item,
+        qty: item.qty - 1,
+      };
+    }
+    return item;
+  });
+
+  setCArtItems(updatedCart);
+  localStorage.setItem("cart", JSON.stringify(updatedCart));
+}
 
   return (
     <div className="group rounded-3xl border border-white/10 bg-[#181818] p-4 transition-all duration-300 hover:border-lime-400/40 hover:-translate-y-1">
@@ -109,7 +148,7 @@ export default function CartItem({pro}) {
 
             <div className="flex items-center gap-2">
 
-              <button className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 bg-[#222] text-white transition hover:border-lime-400">
+              <button onClick={()=>decrease(pro.id)} className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 bg-[#222] text-white transition hover:border-lime-400">
 
                 <FiMinus />
 
@@ -117,11 +156,11 @@ export default function CartItem({pro}) {
 
               <span className="w-6 text-center text-white">
 
-                1
+                {pro.qty}
 
               </span>
 
-              <button className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 bg-[#222] text-white transition hover:border-lime-400">
+              <button onClick={()=>increase(pro.id)} className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 bg-[#222] text-white transition hover:border-lime-400">
 
                 <FiPlus />
 

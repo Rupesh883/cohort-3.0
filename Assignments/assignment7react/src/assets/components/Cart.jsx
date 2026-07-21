@@ -12,39 +12,64 @@ import {
   FaCcMastercard,
   FaCcPaypal,
 } from "react-icons/fa";
+import { Link, Navigate } from "react-router";
 
 import CartItem from "./CartItems";
 import { useContext, useEffect, useState } from "react";
 import { MyContext } from "./Contextapi";
+import { useNavigate } from "react-router";
 
 export default function CartDrawer() {
 //   const {cartItems,setCArtItems}=useContext(MyContext)
+const navigate = useNavigate();
 
       const {cartOpen,setCartOpen,cartItems,setCArtItems}=useContext(MyContext)
-      const[totalPrice,setTotalPrice]=useState()
-      console.log("cart open")
+      const[totalPrice,setTotalPrice]=useState(0)
+    
 
      function CalculateCartTotal() {
-  const total = cartItems.reduce((acc, cur) => {
-    return acc + cur.price;
+        if(cartItems.length==0)return setTotalPrice(0)
+        const total = cartItems.reduce((acc, cur) => {
+            return acc + cur.price*cur.qty
   }, 0);
-
-  setTotalPrice((total+25));
-  console.log(total);
+     if(total>0){
+        setTotalPrice(total+25);
+     }
+  
+ 
 }
       useEffect(()=>{
           CalculateCartTotal()
-      },[cartOpen])
+          console.log("cartchange")
+      },[cartItems])
+
  return (
-     cartOpen ?(<>
-    //   {/* Overlay */}
+   <>
+    {/* Overlay */}
 
-      <div onClick={()=> setCartOpen(false)} className="fixed inset-0 z-40 w-full h-screen bg-black/60 backdrop-blur-sm" />
+            <div
+            onClick={() => setCartOpen(false)}
+            className={`fixed inset-0 z-40 w-full h-screen bg-black/60 backdrop-blur-sm
+            transition-opacity duration-300
+            ${
+                cartOpen
+                ? "opacity-100 pointer-events-auto"
+                : "opacity-0 pointer-events-none"
+            }`}
+            />
+  {/* Drawer */}
 
-    //   {/* Drawer */}
-
-        <aside className="fixed transition-all duration-75 ease-in right-0 top-0 rounded-3xl z-50 flex h-screen overflow-y-auto w-full flex-col border-l border-white/10 bg-[#0D0D0D] shadow-2xl pb-4 sm:w-[420px]">
-
+                    <aside
+                className={`fixed right-0 top-0 z-50 flex h-screen w-full sm:w-[420px]
+                flex-col overflow-y-auto rounded-3xl border-l border-white/10
+                bg-[#0D0D0D] shadow-2xl pb-4
+                transition-transform duration-300 ease-in-out
+                ${
+                    cartOpen
+                    ? "translate-x-0"
+                    : "translate-x-full"
+                }`}
+                >
             // {/* Header */}
 
             <div className="border-b border-white/10 p-6">
@@ -130,7 +155,7 @@ export default function CartDrawer() {
 
                 <span>Subtotal</span>
 
-                <span>${(totalPrice-25)}</span>
+                <span>${(totalPrice?totalPrice-25:totalPrice).toFixed(2)}</span>
 
                 </div>
 
@@ -182,7 +207,7 @@ export default function CartDrawer() {
 
                 <span className="text-3xl font-black text-lime-400">
 
-                ${totalPrice}
+                ${totalPrice.toFixed(2)}
 
                 </span>
 
@@ -190,7 +215,9 @@ export default function CartDrawer() {
 
             {/* Buttons */}
 
-            <button className="mt-6 h-14 w-full rounded-2xl bg-lime-400 font-bold text-black transition duration-300 hover:scale-[1.02] hover:bg-lime-300">
+            <button onClick={()=>{if(cartItems.length===0){
+               alert("No Items in cart") 
+            } navigate('checkout')}} className="mt-6 h-14 w-full rounded-2xl bg-lime-400 font-bold text-black transition duration-300 hover:scale-[1.02] hover:bg-lime-300">
 
                 Proceed to Checkout
 
@@ -229,6 +256,6 @@ export default function CartDrawer() {
             </div>
 
         </aside>
-    </>):null
-  );
+    </>)
+
 }

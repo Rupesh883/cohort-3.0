@@ -4,12 +4,14 @@ import { MdEmail, MdLock } from "react-icons/md";
 import { useForm } from "react-hook-form"
 import { Link, redirect, useNavigate } from "react-router";
 import { MyContext } from "./Contextapi";
+import { toast } from "react-toastify";
 
 
 export default function Login() {
    const navigate = useNavigate();
   let{allUserData, setAllUserData,loginData, setLoginData}=useContext(MyContext)
-  
+   let massage=()=> toast.success("User Logged in Successfully!");
+  let invalidMEssage=()=>toast.error("incorrect Email or Password")
      const {
     register,
     handleSubmit,
@@ -19,18 +21,16 @@ export default function Login() {
   } = useForm()
   
      function Submit(data){
-      console.log(allUserData)
       let userExist=allUserData.find((user)=> user.email == data.email)
-      console.log(userExist)
       if(userExist && userExist.password===data.password){
-        alert("user Logged in Successfully")
+       massage()
         setLoginData(userExist)
          localStorage.setItem("CurrentUser",JSON.stringify(userExist))
           navigate("/")
         reset()
         return
       }
-        alert("Email or password Not Match Please try Again")
+        invalidMEssage()
      }
 
 

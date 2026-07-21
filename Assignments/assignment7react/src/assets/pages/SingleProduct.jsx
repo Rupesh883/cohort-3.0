@@ -1,74 +1,5 @@
-// import Navbar from "../components/Nav";
-// import Footer from "../components/Footer";
 
-// // import ProductInfo from "../components/product/ProductInfo";
-// // import ProductTabs from "../components/product/ProductTabs";
-// // import RelatedProducts from "../components/product/RelatedProducts";
-// import { useParams } from "react-router";
-// import axios from "axios";
-// import { useEffect, useState } from "react";
-
-// export default function SingleProduct() {
-//      let {id}=useParams()
-//     //  console.log(id.data)
-//     const[data,setData]=useState()
-
-//     async function fetchSingle(){
-//     let result=  await axios.get(`https://dummyjson.com/products/${id}`)
-//       console.log(result.data)
-//       setData(result.data)
-//     }
-  
-//     useEffect(()=>{
-//         fetchSingle()
-//     },[])
-//   return (
-//     <div className="min-h-screen bg-[#0D0D0D]">
-
-//       <Navbar />
-
-//       <main className="max-w-7xl mx-auto px-5 pt-32 pb-20">
-
-//         {/* Breadcrumb */}
-
-//         <p className="text-gray-500 mb-8">
-
-//           Home / Shop /
-
-//           <span className="text-lime-400">
-//             {" "}
-//             {product.title}
-//           </span>
-
-//         </p>
-
-//         {/* Product */}
-
-//         <div className="grid lg:grid-cols-2 gap-16">
-
-//           <ProductGallery product={product} />
-
-//           <ProductInfo product={product} />
-
-//         </div>
-
-//         <ProductTabs />
-
-//         <RelatedProducts />
-
-//       </main>
-
-//       <Footer />
-
-//     </div>
-//     // <div>Hello Im single</div>
-//   );
-// }
-
-
-
-
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, useParams } from "react-router";
 import axios from "axios";
 
@@ -85,9 +16,12 @@ import {
   FiRefreshCw,
   FiStar,
 } from "react-icons/fi";
+import LoadingPage from "../components/Loading";
+import { MyContext } from "../components/Contextapi";
 
 export default function SingleProduct() {
   const { id } = useParams();
+  let{cartItems,setCArtItems}=useContext(MyContext)
 
   const [product, setProduct] = useState(null);
   const [selectedImage, setSelectedImage] = useState("");
@@ -108,9 +42,7 @@ export default function SingleProduct() {
 
   if (!product) {
     return (
-      <div className="min-h-screen bg-[#0D0D0D] flex items-center justify-center text-white text-2xl">
-        Loading...
-      </div>
+      <LoadingPage />
     );
   }
 
@@ -119,9 +51,43 @@ export default function SingleProduct() {
     (product.price * product.discountPercentage) / 100
   ).toFixed(2);
 
+  // product add
+   function AddToCart(pro){ 
+    let isExist=cartItems.find((elem)=> elem.id === pro.id)
+      if(isExist){
+        const updatedCart = cartItems.map((item) => {
+          if (item.id === pro.id) {
+            return {
+              ...item,
+              qty: item.qty + 1,
+            };
+        }
+      return item;
+ 
+  });
+
+        setCArtItems(updatedCart);
+        localStorage.setItem("cart", JSON.stringify(updatedCart));
+      }else{
+
+      let newProduct={
+        ...pro,
+        qty:quantity,
+        isFavorite:false
+      }
+      // showAlert()
+   
+      localStorage.setItem("cart",JSON.stringify([...cartItems,newProduct]))
+      setCArtItems((prev)=>[...prev,newProduct])
+    
+
+      }
+    
+  }
+
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
 
       <main className="bg-[#0D0D0D] text-white pt-32 pb-24">
 
@@ -313,7 +279,7 @@ export default function SingleProduct() {
 
                 </div>
 
-                <button className="flex-1 h-14 rounded-xl bg-lime-400 text-black font-bold flex items-center justify-center gap-3 hover:scale-[1.02] transition">
+                <button  onClick={()=>AddToCart(product)} className="flex-1 h-14 rounded-xl bg-lime-400 text-black font-bold flex items-center justify-center gap-3 hover:scale-[1.02] transition">
 
                   <FiShoppingCart />
 
@@ -323,11 +289,7 @@ export default function SingleProduct() {
 
               </div>
 
-              <button className="w-full h-14 rounded-xl border border-lime-400 text-lime-400 mt-5 hover:bg-lime-400 hover:text-black transition">
 
-                Buy Now
-
-              </button>
 
               {/* Service */}
 
