@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useEffect } from 'react'
 import { createContext,useState } from 'react'
+import api from "../configs/ApiCallcenter"
 export const MyContext=createContext()
 
 export function ContextProvider({ children }) {
@@ -12,7 +13,7 @@ export function ContextProvider({ children }) {
   
 
  async function fetchProducts(){
-   let result=await  axios.get("https://dummyjson.com/products?limit=100")
+   let result=await  api.get("products?limit=100")
    setProducts(result.data.products)
 
   }

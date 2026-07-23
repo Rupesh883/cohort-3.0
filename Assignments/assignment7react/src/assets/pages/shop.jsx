@@ -13,7 +13,6 @@ export default function Shop() {
  
 
   const {products,setProducts,filter,setFilter}=useContext(MyContext)
-    // console.log(products)
    if(!products){
     return <LoadingPage />
    }

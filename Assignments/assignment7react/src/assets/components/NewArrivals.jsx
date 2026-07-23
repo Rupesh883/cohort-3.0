@@ -13,7 +13,6 @@ export default function NewArrivals() {
  async function fetchProducts(){
    let result=await  axios.get("https://dummyjson.com/products?limit=10")
    setProducts(result.data.products)
-   console.log()
   }
   useEffect(()=>{
      fetchProducts()

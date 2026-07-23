@@ -34,6 +34,7 @@ function App() {
 
          <Route path='/shop' element={<ProtectedRoute><Shop/></ProtectedRoute>}> </Route>
          <Route path='/product/:id' element={<ProtectedRoute><SingleProduct/></ProtectedRoute>}/>
+
    </Routes>
  </>
   )

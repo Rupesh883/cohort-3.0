@@ -40,7 +40,7 @@ const navigate = useNavigate();
 }
       useEffect(()=>{
           CalculateCartTotal()
-          console.log("cartchange")
+          
       },[cartItems])
 
  return (
@@ -215,15 +215,18 @@ const navigate = useNavigate();
 
             {/* Buttons */}
 
-            <button onClick={()=>{if(cartItems.length===0){
-               alert("No Items in cart") 
+            <button onClick={()=>{
+               setCartOpen(false)
+                if(
+                cartItems.length===0){
+             return  alert("No Items in cart") 
             } navigate('checkout')}} className="mt-6 h-14 w-full rounded-2xl bg-lime-400 font-bold text-black transition duration-300 hover:scale-[1.02] hover:bg-lime-300">
 
                 Proceed to Checkout
 
             </button>
 
-            <button className="mt-3 h-14 w-full rounded-2xl border border-white/10 bg-[#191919] text-white transition hover:border-lime-400 hover:text-lime-400">
+            <button onClick={()=>setCartOpen(false)} className="mt-3 h-14 w-full rounded-2xl border border-white/10 bg-[#191919] text-white transition hover:border-lime-400 hover:text-lime-400">
 
                 Continue Shopping
 

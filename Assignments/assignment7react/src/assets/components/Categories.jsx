@@ -11,20 +11,26 @@ import {
 import { FiArrowUpRight } from "react-icons/fi";
 import { Link } from "react-router";
 import { MyContext } from "./Contextapi";
+import api from "../configs/ApiCallcenter";
 
 export default function Categories() {
   const{products,setProducts,categoryFilter,setCategoryFilter}=useContext(MyContext)
       const[categories,setCategories]=useState([])
      async function FetchCategory(){
-        let data= await  axios.get("https://dummyjson.com/products/categories")
+       try {
+        let data= await  api.get("products/categories")
          setCategories(data.data)
+       } catch (error) {
+       } 
         
       }
      async  function callCategory(url,slug){
-             let data= await  axios.get(`${url}`)
-             console.log(data.data.products)
+      try{
+         let data= await  axios.get(`${url}`)
               setProducts(data.data.products)
               setCategoryFilter([slug])
+      }catch(error){
+      }
        }
       
       useEffect(()=>{
@@ -109,7 +115,6 @@ export default function Categories() {
         <div className="flex flex-row flex-wrap  lg:grid-cols-6 gap-4">
 
           {categories?.map((item, index) => {
-            // console.log(item)
       return  ( 
       <div
                 key={index}

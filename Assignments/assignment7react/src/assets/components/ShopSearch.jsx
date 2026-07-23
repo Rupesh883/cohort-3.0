@@ -22,11 +22,9 @@ export default function SearchFilter() {
   async  function DeleteFilter(item){
     let fil=categoryFilter.filter((elem)=> elem !== item)
          setCategoryFilter(fil)
-         console.log(fil)
          if (fil.length==0) {
              let result=await  axios.get("https://dummyjson.com/products?limit=100")
             setProducts(result.data.products)
-            console.log(result)
 
          }
 

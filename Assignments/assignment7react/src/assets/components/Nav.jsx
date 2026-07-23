@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { IoMdLogOut } from "react-icons/io";
-import { useNavigate } from "react-router";
+import { NavLink, useNavigate } from "react-router";
 import {
   FiSearch,
   FiHeart,
@@ -25,11 +25,11 @@ export default function Navbar() {
    Navigate("/login")
   }
 
-  const navLinks = [
-    "Home",
-    "Shop",
-    "About",
-  ];
+  // const navLinks = [
+  //   "Home",
+  //   "Shop",
+  //   "About",
+  // ];
 
   return (
     <header className="fixed top-0 left-0 w-full z-20">
@@ -42,7 +42,7 @@ export default function Navbar() {
 
           <div className="flex items-center gap-3 cursor-pointer group">
 
-            <div className="w-12 h-12 rounded-xl bg-lime-400 flex items-center justify-center transition-all duration-300 group-hover:rotate-12 group-hover:scale-110">
+            <div onClick={()=>Navigate('/')} className="w-12 h-12 rounded-xl bg-lime-400 flex items-center justify-center transition-all duration-300 group-hover:rotate-12 group-hover:scale-110">
 
               <FaShoppingBag className="text-black text-xl" />
 
@@ -66,21 +66,21 @@ export default function Navbar() {
 
           <ul className="hidden lg:flex items-center gap-10">
 
-              <Link  to="/"
-                    className="relative cursor-pointer text-gray-300 hover:text-lime-400 transition-all duration-300 after:absolute after:left-0 after:-bottom-2 after:h-[2px] after:w-0 after:bg-lime-400 after:transition-all hover:after:w-full">
+              <NavLink  to="/"
+                    className={({isActive})=>isActive?"text-lime-400" :"relative cursor-pointer text-gray-300 hover:text-lime-400 transition-all duration-300 after:absolute after:left-0 after:-bottom-2 after:h-[2px] after:w-0 after:bg-lime-400 after:transition-all hover:after:w-full"}>
                 Home
-              </Link>
-              <Link to={"/shop"} className="relative cursor-pointer text-gray-300 hover:text-lime-400 transition-all duration-300 after:absolute after:left-0 after:-bottom-2 after:h-[2px] after:w-0 after:bg-lime-400 after:transition-all hover:after:w-full">
+              </NavLink>
+              <NavLink to={"/shop"} className={({isActive})=>isActive?"text-lime-400" :"relative cursor-pointer text-gray-300 hover:text-lime-400 transition-all duration-300 after:absolute after:left-0 after:-bottom-2 after:h-[2px] after:w-0 after:bg-lime-400 after:transition-all hover:after:w-full"}>
                 Shop
-              </Link>
-              <button  onClick={() =>
+              </NavLink>
+              <NavLink  onClick={() =>
               window.scrollTo({
                 top: document.body.scrollHeight,
                 behavior: "smooth",
               })
-            } className="relative cursor-pointer text-gray-300 hover:text-lime-400 transition-all duration-300 after:absolute after:left-0 after:-bottom-2 after:h-[2px] after:w-0 after:bg-lime-400 after:transition-all hover:after:w-full">
+            } className={"relative cursor-pointer text-gray-300 hover:text-lime-400 transition-all duration-300 after:absolute after:left-0 after:-bottom-2 after:h-[2px] after:w-0 after:bg-lime-400 after:transition-all hover:after:w-full"}>
                 About
-              </button>
+              </NavLink>
 
           </ul>
 
@@ -94,7 +94,7 @@ export default function Navbar() {
 
             </button> */}
 
-            <button className="relative w-11 h-11 rounded-xl bg-[#181818] text-white flex justify-center items-center hover:bg-lime-400 hover:text-black transition-all duration-300 hover:scale-110">
+            {/* <NavLink to={'/favorite'} className="relative w-11 h-11 rounded-xl bg-[#181818] text-white flex justify-center items-center hover:bg-lime-400 hover:text-black transition-all duration-300 hover:scale-110">
 
               <FiHeart />
 
@@ -104,7 +104,7 @@ export default function Navbar() {
 
               </span>
 
-            </button>
+            </NavLink> */}
 
             <button onClick={()=>setCartOpen(!cartOpen)} className="relative w-11 h-11 rounded-xl bg-[#181818] text-white flex justify-center items-center hover:bg-lime-400 hover:text-black transition-all duration-300 hover:scale-110">
 
@@ -146,38 +146,37 @@ export default function Navbar() {
 
           <div className="rounded-2xl bg-[#181818] border border-white/10 p-6">
 
-            <ul className="space-y-5">
-                   <Link  to="/"
-                          className="relative cursor-pointer text-gray-300 hover:text-lime-400 transition-all duration-300 after:absolute after:left-0 after:-bottom-2 after:h-[2px] after:w-0 after:bg-lime-400 after:transition-all hover:after:w-full">
+            <ul className="space-y-5 flex flex-row gap-4">
+                   <Link onClick={()=>setMenuOpen(false)}  to="/"
+                          className="relative cursor-pointer text-lime-400 transition-all duration-300 after:absolute after:left-0 after:-bottom-2 after:h-[2px] after:w-0 after:bg-lime-400 after:transition-all hover:after:w-full">
                       Home
                     </Link>
-                    <Link to={"/shop"} className="relative cursor-pointer text-gray-300 hover:text-lime-400 transition-all duration-300 after:absolute after:left-0 after:-bottom-2 after:h-[2px] after:w-0 after:bg-lime-400 after:transition-all hover:after:w-full">
+                    <Link onClick={()=>setMenuOpen(false)} to={"/shop"} className="relative cursor-pointer text-lime-400 transition-all duration-300 after:absolute after:left-0 after:-bottom-2 after:h-[2px] after:w-0 after:bg-lime-400 after:transition-all hover:after:w-full">
                       Shop
                     </Link>
-                    <button onClick={() =>
+                    <Link onClick={() =>{
+                  setMenuOpen(false)
                   window.scrollTo({
                 top: document.body.scrollHeight,
                 behavior: "smooth",
-                  })}
-               className="relative cursor-pointer text-gray-300 hover:text-lime-400 transition-all duration-300 after:absolute after:left-0 after:-bottom-2 after:h-[2px] after:w-0 after:bg-lime-400 after:transition-all hover:after:w-full">
+                  })}  }
+                  className="relative cursor-pointer text-lime-400 transition-all duration-300 after:absolute after:left-0 after:-bottom-2 after:h-[2px] after:w-0 after:bg-lime-400 after:transition-all hover:after:w-full">
                       About
-                    </button>
+                    </Link>
 
             </ul>
 
             <div className="flex gap-4 mt-6">
-
-              <button className="w-11 h-11 rounded-xl bg-lime-400 flex justify-center items-center">
-                <FiSearch />
-              </button>
-
-              <button className="w-11 h-11 rounded-xl bg-lime-400 flex justify-center items-center">
-                <FiHeart />
-              </button>
-
-              <button className="w-11 h-11 rounded-xl bg-lime-400 flex justify-center items-center">
+              <button onClick={()=>{
+                setMenuOpen(false)
+                setCartOpen(true)}} className="w-11 h-11 rounded-xl bg-lime-400 flex justify-center items-center">
                 <FiShoppingCart />
               </button>
+               <button onClick={()=>{
+                setMenuOpen(false)
+                handelLogout()}} className="w-11 h-11 rounded-xl bg-lime-400 flex justify-center items-center">
+              <IoMdLogOut className="text-2xl" />
+            </button>
 
             </div>
 
